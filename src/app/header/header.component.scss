@@ -1,0 +1,86 @@
+.nav-main {
+  width: 100%;
+  height: auto;
+}
+
+.top-nav {
+  min-width: 100%;
+  max-width: 100%;
+  height: auto;
+  padding: 5px 0;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.top-nav .top-nav-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-left p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.account-dropdown a{
+  display: flex;
+  align-items: center;
+}
+
+.account-dropdown p,
+.country-name p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.account-dropdown span,
+.country-name span {
+  display: contents;
+}
+
+.account-dropdown span i,
+.country-name span i {
+  margin-left: 6px;
+  font-size: 12px;
+  padding-top: 3px;
+}
+
+.country-select {
+  margin-left: 20px;
+}
+
+.country-dropdown a{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.country-image {
+  width: 30px;
+  display: flex;
+  margin-right: 4px;
+}
+
+.country-image img {
+  width: 100%;
+  height: auto;
+  display: inline;
+}
+
+.country-name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-child {
+  padding: 20px;
+  background-color: crimson;
+}
