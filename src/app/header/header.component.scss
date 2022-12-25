@@ -29,7 +29,7 @@
   justify-content: flex-end;
 }
 
-.account-dropdown a{
+.account-dropdown a {
   display: flex;
   align-items: center;
 }
@@ -38,6 +38,10 @@
 .country-name p {
   font-size: 14px;
   font-weight: 400;
+}
+
+.country-name p {
+  padding-top: 3px;
 }
 
 .account-dropdown span,
@@ -56,7 +60,7 @@
   margin-left: 20px;
 }
 
-.country-dropdown a{
+.country-dropdown a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -83,4 +87,126 @@
 .nav-child {
   padding: 20px;
   background-color: crimson;
+}
+
+@media (max-width: 556px) {
+  .top-nav .top-nav-child {
+    justify-content: flex-end;
+  }
+
+  .top-left {
+    display: none;
+  }
+
+  .account-dropdown p,
+  .country-name p {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .account-dropdown span i,
+  .country-name span i {
+    margin-left: 6px;
+    font-size: 10px;
+    padding-top: 0px;
+  }
+
+  .country-image {
+    width: 25px;
+    display: flex;
+    margin-right: 4px;
+  }
+}
+
+.middle-nav {
+  width: 100%;
+  padding: 20px 0px;
+}
+
+.middle-nav-child {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.middle-nav-child .mid-search {
+  flex: 0.5;
+}
+
+.mid-search form {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+}
+
+.mid-search input {
+  width: 100%;
+  border: none;
+  outline: 0px;
+  border-radius: 4px 0px 0px 4px;
+  height: 44px;
+  background-color: #f2f2f2;
+  padding: 0px 12px;
+  color: #333;
+}
+
+.mid-search input::placeholder {
+  color: gray;
+}
+
+.mid-search .search-btn {
+  padding: 0 32px;
+  transition: all 0.3s linear;
+  background-color: #fc404a;
+  fill: #fff;
+  border-radius: 0 4px 4px 0;
+  height: 44px;
+  border: 0px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mid-search .search-btn i {
+  padding-top: 2px;
+  font-size: 22px;
+  color: #fff;
+}
+
+.mid-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-wishlist {
+  margin-right: 20px;
+}
+
+.cart-wishlist button,
+.cart-cart button {
+  border: none;
+  background: transparent;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-wishlist button span:last-child,
+.cart-cart button span:last-child {
+  padding-top: 6px;
+  margin-left: 6px;
+  transition: 200ms;
+}
+
+.cart-cart button span:last-child {
+  color: #fc404a;
+}
+
+.cart-wishlist button:hover span:last-child {
+  color: #fc404a;
 }
