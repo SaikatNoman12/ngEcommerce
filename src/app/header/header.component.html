@@ -10,7 +10,7 @@
         <!-- account -->
         <div class="account">
           <div class="account-dropdown">
-            <a href="">
+            <a (click)="onShowAccountDrDwn($event)">
               <p>
                 {{ "My Account" | titlecase }}
               </p>
@@ -19,7 +19,31 @@
               </span>
             </a>
           </div>
-          <div class="account-dropdown-menu"></div>
+
+          <ng-container *ngIf="accountDropDown">
+            <div class="account-dropdown-menu">
+              <ul>
+                <li>
+                  <a href="#">
+                    <span>
+                      <i class="fas fa-lock"></i>
+                    </span>
+                    <span>
+                      {{ "Login" | lowercase }}
+                    </span>
+                  </a>
+                  <a href="#">
+                    <span>
+                      <i class="fas fa-user"></i>
+                    </span>
+                    <span>
+                      {{ "Create Account" | lowercase }}
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </ng-container>
         </div>
 
         <!-- country select -->
@@ -36,14 +60,9 @@
                 <p>
                   {{ "USD" | uppercase }}
                 </p>
-                <!-- <span>
-                  <i class="fas fa-chevron-down"></i>
-                </span> -->
               </div>
             </a>
           </div>
-
-          <!-- <div class="country-dropdown-menu"></div> -->
         </div>
       </div>
     </div>
@@ -159,6 +178,7 @@
   <!-- bottom-nav -->
   <div class="bottom-nav">
     <div class="custom-container bottom-nav-child">
+      <!-- nav items -->
       <div class="nav-items">
         <div class="nav-item">
           <p>
@@ -192,6 +212,7 @@
         </div>
       </div>
 
+      <!-- special gift -->
       <div class="special">
         <button type="button">
           <span>
