@@ -230,6 +230,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 200ms;
+}
+
+.mid-search .search-btn:hover {
+  background-color: $color-crimson-opacity;
+}
+
+.mid-search .search-btn:active{
+  background-color: $color-crimson-opacity-2;
 }
 
 .mid-search .search-btn i {
