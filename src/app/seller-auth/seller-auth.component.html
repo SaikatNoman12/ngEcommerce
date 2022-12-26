@@ -25,29 +25,65 @@
 
     <!-- /----::SELLER-ACCOUNT-FORM::----/ -->
     <div class="seller-account-form">
-      <form>
+      <form [formGroup]="myRecForm" (ngSubmit)="onSelFmSubmit()">
         <div class="form-item">
           <div class="form-item-child">
             <label for="name">Name:</label>
-            <input id="name" type="text" placeholder="Enter name..." />
+            <input
+              id="name"
+              type="text"
+              placeholder="Enter name..."
+              formControlName="name"
+            />
           </div>
-          <small class="form-error"> *Please enter your name! </small>
+          <small
+            *ngIf="!formControls?.['name']?.valid && formControls?.['name']?.touched"
+            class="form-error"
+          >
+            *Please enter your name!
+          </small>
         </div>
 
         <div class="form-item">
           <div class="form-item-child">
             <label for="email">Email:</label>
-            <input id="email" type="email" placeholder="Enter email..." />
+            <input
+              id="email"
+              type="email"
+              placeholder="Enter email..."
+              formControlName="email"
+            />
           </div>
-          <small class="form-error"> *Please enter your valid email! </small>
+          <small
+            class="form-error"
+            *ngIf="!formControls?.['email']?.valid && formControls?.['email']?.touched"
+          >
+            *Please enter your valid email!
+          </small>
         </div>
 
         <div class="form-item">
           <div class="form-item-child">
             <label for="password">Password:</label>
-            <input id="password" type="email" placeholder="Enter password..." />
+            <input
+              id="password"
+              type="email"
+              placeholder="Enter password..."
+              formControlName="password"
+            />
           </div>
-          <small class="form-error"> *Please enter your valid password! </small>
+          <small
+            class="form-error"
+            *ngIf="!formControls?.['password']?.valid && formControls?.['password']?.touched && !formControls?.['password']?.errors?.['minlength']"
+          >
+            *Please enter your valid password!
+          </small>
+          <small
+            class="form-error"
+            *ngIf="!formControls?.['password']?.valid && formControls?.['password']?.touched && formControls?.['password']?.errors?.['minlength']"
+          >
+            *Please enter your password min 8 character!
+          </small>
         </div>
 
         <div class="form-button">

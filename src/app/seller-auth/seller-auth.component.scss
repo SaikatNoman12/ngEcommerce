@@ -119,7 +119,7 @@ form {
 
 .form-item-child label {
   display: block;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: $color-light-gray;
   margin-bottom: 6px;
@@ -133,9 +133,13 @@ form {
   padding: 0px 8px;
   border-radius: 5px;
   color: $color-black;
-  border: 1px solid $color-light-gray-2;
+  border: 1px solid $color-light-gray-3;
   font-size: $font-decs-size;
   font-weight: 500;
+}
+
+.form-item-child input:focus {
+  border: 1px solid $color-red-crimson;
 }
 
 .form-item-child input::placeholder {
@@ -171,8 +175,17 @@ form {
   border: 1px solid $color-black;
 }
 
+.form-button button:active {
+  background: $color-crimson-opacity-2;
+}
+
 .back-store a {
   font-weight: 500;
+  transition: 300ms;
+}
+
+.back-store a:hover {
+  color: $color-red-crimson;
 }
 
 .back-store a span:first-child {

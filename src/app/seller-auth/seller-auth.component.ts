@@ -1,3 +1,4 @@
+import { SellerSignUp } from './../interfaces/seller-sign-up';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -9,10 +10,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SellerAuthComponent implements OnInit {
 
   /* -----::USE FOR FORM::----- */
-  myRecFrom!: FormGroup;
+  myRecForm!: FormGroup;
   /* -----::USE FOR GET URL PATHNAME::----- */
   urlPathName: any;
-
 
   /* -----::ANGULAR CONSTRUCTOR METHOD::----- */
   constructor(
@@ -23,17 +23,42 @@ export class SellerAuthComponent implements OnInit {
   /* -----::ANGULAR OnInit HOOK::----- */
   ngOnInit(): void {
     /* -----::USE FOR FORM::----- */
-    this.myRecFrom = this.fb.group({
+    this.myRecForm = this.fb.group({
       'name': [null, [Validators.required]],
-      'email': [null, [Validators.required]],
-      'password': [null, [Validators.required]],
+      'email': [null, [Validators.required, Validators.email]],
+      'password': [null, [Validators.required, Validators.minLength(8)]],
     });
 
     /* -----::USE FOR SET URL PATHNAME::----- */
     this.urlPathName = location.pathname.split('/');
   }
 
+  /* -----::GET REACTIVE FORM CONTROL::----- */
+  get formControls() {
+    return this.myRecForm.controls;
+  }
 
+
+  onSelFmSubmit() {
+    if (this.myRecForm.valid) {
+
+      const userData: SellerSignUp = this.myRecForm.value;
+      console.log(userData);
+
+    }
+    else {
+
+      const key = Object.keys(this.formControls);
+      key.filter(userData => {
+        const control = this.myRecForm.controls[userData];
+        if (control.errors !== null) {
+          control.markAsTouched();
+        }
+      }
+      );
+
+    }
+  }
 
 
 }
