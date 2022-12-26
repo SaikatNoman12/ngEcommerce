@@ -55,3 +55,133 @@
 .top-location-child ul li:last-child span {
   display: none;
 }
+
+.seller-account {
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+.seller-account-child {
+  width: 100%;
+}
+
+.account-form-title h1 {
+  font-weight: 500;
+  font-size: 26px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  position: relative;
+  margin-top: 10px;
+  border-bottom: 2px solid #e4e4e4;
+  text-align: center;
+  position: relative;
+  padding: 4px 0px;
+}
+
+.account-form-title h1 span {
+  position: relative;
+}
+
+.account-form-title h1 span::after {
+  content: "";
+  width: 50%;
+  bottom: -4px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 2;
+  border-bottom: 2px solid $color-red-crimson;
+}
+
+/* -----::SELLER_ACCOUNT_FORM::----- */
+.seller-account-form {
+  border: 1px solid $color-light-2;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+form {
+  width: 100%;
+}
+
+.form-item {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.form-item-child {
+  width: 100%;
+}
+
+.form-item-child label {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  color: $color-light-gray;
+  margin-bottom: 6px;
+}
+
+.form-item-child input {
+  display: block;
+  width: 100%;
+  outline: 0;
+  height: 39px;
+  padding: 0px 8px;
+  border-radius: 5px;
+  color: $color-black;
+  border: 1px solid $color-light-gray-2;
+  font-size: $font-decs-size;
+  font-weight: 500;
+}
+
+.form-item-child input::placeholder {
+  font-size: 14px;
+  color: $color-light-gray-2;
+}
+
+.form-error {
+  color: $color-red-crimson;
+}
+
+.form-button {
+  margin-bottom: 24px;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.form-button button {
+  border: 0;
+  outline: 0;
+  background: $color-red-crimson;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  padding: 4px 20px;
+  border-radius: 5px;
+  transition: 300ms;
+  border: 1px solid transparent;
+}
+
+.form-button button:hover {
+  background: $color-crimson-opacity;
+  border: 1px solid $color-black;
+}
+
+.back-store a {
+  font-weight: 500;
+}
+
+.back-store a span:first-child {
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+.back-store a span:last-child {
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: capitalize;
+}

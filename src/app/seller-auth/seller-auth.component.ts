@@ -10,16 +10,18 @@ export class SellerAuthComponent implements OnInit {
 
   /* -----::USE FOR FORM::----- */
   myRecFrom!: FormGroup;
-
   /* -----::USE FOR GET URL PATHNAME::----- */
   urlPathName: any;
 
+
+  /* -----::ANGULAR CONSTRUCTOR METHOD::----- */
   constructor(
     private fb: FormBuilder
   ) { }
 
-  ngOnInit(): void {
 
+  /* -----::ANGULAR OnInit HOOK::----- */
+  ngOnInit(): void {
     /* -----::USE FOR FORM::----- */
     this.myRecFrom = this.fb.group({
       'name': [null, [Validators.required]],
@@ -27,9 +29,11 @@ export class SellerAuthComponent implements OnInit {
       'password': [null, [Validators.required]],
     });
 
+    /* -----::USE FOR SET URL PATHNAME::----- */
     this.urlPathName = location.pathname.split('/');
-    console.log(this.urlPathName);
-
   }
+
+
+
 
 }

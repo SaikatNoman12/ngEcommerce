@@ -1,3 +1,4 @@
+<!-- /----::TOP LOCATION CHILD::----/ -->
 <div class="top-location">
   <div class="custom-container top-location-child">
     <ul>
@@ -10,5 +11,58 @@
         </li>
       </ng-container>
     </ul>
+  </div>
+</div>
+
+<!-- /----::CREATE SELLER ACCOUNT FORM::----/ -->
+<div class="seller-account">
+  <div class="custom-container seller-account-child">
+    <div class="account-form-title">
+      <h1>
+        <span>Create Seller Account</span>
+      </h1>
+    </div>
+
+    <!-- /----::SELLER-ACCOUNT-FORM::----/ -->
+    <div class="seller-account-form">
+      <form>
+        <div class="form-item">
+          <div class="form-item-child">
+            <label for="name">Name:</label>
+            <input id="name" type="text" placeholder="Enter name..." />
+          </div>
+          <small class="form-error"> *Please enter your name! </small>
+        </div>
+
+        <div class="form-item">
+          <div class="form-item-child">
+            <label for="email">Email:</label>
+            <input id="email" type="email" placeholder="Enter email..." />
+          </div>
+          <small class="form-error"> *Please enter your valid email! </small>
+        </div>
+
+        <div class="form-item">
+          <div class="form-item-child">
+            <label for="password">Password:</label>
+            <input id="password" type="email" placeholder="Enter password..." />
+          </div>
+          <small class="form-error"> *Please enter your valid password! </small>
+        </div>
+
+        <div class="form-button">
+          <button type="submit">Resister</button>
+        </div>
+      </form>
+
+      <div class="back-store">
+        <a href="" routerLink="/">
+          <span>
+            <i class="fas fa-chevron-left"></i>
+          </span>
+          <span> Return To Store </span></a
+        >
+      </div>
+    </div>
   </div>
 </div>
