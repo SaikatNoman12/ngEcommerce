@@ -1,0 +1,14 @@
+<div class="top-location">
+  <div class="custom-container top-location-child">
+    <ul>
+      <ng-container *ngFor="let path of urlPathName">
+        <li>
+          <a href="" routerLink="{{ path !== '' ? path : '' }}">
+            {{ path !== "" ? path : "Home" }}
+          </a>
+          <span>|</span>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>

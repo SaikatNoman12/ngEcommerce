@@ -1,0 +1,57 @@
+@import "../../theme/variable.scss";
+
+.top-location {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.top-location-child {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 8px 10px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.top-location-child ul {
+  list-style: none;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  position: relative;
+}
+
+.top-location-child ul li {
+  display: flex;
+  align-items: center;
+}
+
+.top-location-child ul li a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #313131;
+  text-transform: uppercase;
+  transition: 300ms;
+  letter-spacing: 1px;
+}
+
+.top-location-child ul li a:hover {
+  color: $color-red-crimson;
+}
+
+.top-location-child ul li:last-child a {
+  pointer-events: none;
+  font-weight: 400;
+}
+
+.top-location-child ul li span {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0px 10px;
+  color: #000;
+}
+
+.top-location-child ul li:last-child span {
+  display: none;
+}

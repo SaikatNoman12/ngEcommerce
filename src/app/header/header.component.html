@@ -182,32 +182,48 @@
       <div class="nav-items">
         <div class="nav-item">
           <p>
-            <a href="#">{{ "Home" | uppercase }}</a>
+            <a
+              href=""
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >{{ "Home" | uppercase }}</a
+            >
           </p>
         </div>
         <div class="nav-item">
           <p>
-            <a href="#">{{ "Special" | uppercase }}</a>
+            <a href="" routerLink="/" routerLinkActive="">
+              {{ "Special" | uppercase }}
+            </a>
           </p>
         </div>
         <div class="nav-item">
           <p>
-            <a href="#">{{ "New Products" | uppercase }}</a>
+            <a href="" routerLink="/" routerLinkActive="">
+              {{ "New Products" | uppercase }}
+            </a>
           </p>
         </div>
         <div class="nav-item">
           <p>
-            <a href="#">{{ "Blog" | uppercase }}</a>
+            <a href="" routerLink="/" routerLinkActive="">
+              {{ "Blog" | uppercase }}
+            </a>
           </p>
         </div>
         <div class="nav-item">
           <p>
-            <a href="#">{{ "Contact" | uppercase }}</a>
+            <a href="" routerLink="/error" routerLinkActive="">
+              {{ "Contact" | uppercase }}
+            </a>
           </p>
         </div>
         <div class="nav-item">
           <p>
-            <a href="#">{{ "Policy" | uppercase }}</a>
+            <a href="" routerLink="seller" routerLinkActive="active">
+              {{ "Seller" | uppercase }}
+            </a>
           </p>
         </div>
       </div>
