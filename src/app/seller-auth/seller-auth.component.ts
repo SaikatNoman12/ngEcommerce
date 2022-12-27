@@ -1,3 +1,4 @@
+import { SellerService } from './../services/seller/seller.service';
 import { SellerSignUp } from './../interfaces/seller-sign-up';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -16,9 +17,9 @@ export class SellerAuthComponent implements OnInit {
 
   /* -----::ANGULAR CONSTRUCTOR METHOD::----- */
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private _sellerDBService: SellerService,
   ) { }
-
 
   /* -----::ANGULAR OnInit HOOK::----- */
   ngOnInit(): void {
@@ -38,12 +39,18 @@ export class SellerAuthComponent implements OnInit {
     return this.myRecForm.controls;
   }
 
-
-  onSelFmSubmit() {
+  /* -----::USE FOR FORM::----- */
+  onSelFmSubmit(): void {
     if (this.myRecForm.valid) {
 
       const userData: SellerSignUp = this.myRecForm.value;
-      console.log(userData);
+
+      this._sellerDBService.signUp(userData).subscribe(
+        (res) => {
+          console.log(res);
+        },
+        (err) => { }
+      );
 
     }
     else {
@@ -59,6 +66,5 @@ export class SellerAuthComponent implements OnInit {
 
     }
   }
-
 
 }

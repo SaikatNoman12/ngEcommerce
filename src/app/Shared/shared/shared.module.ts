@@ -1,3 +1,4 @@
+import { SellerService } from './../../services/seller/seller.service';
 import { TruthyFalsyService } from './../../services/truthy-falsy.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -10,7 +11,8 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   providers:[
-    TruthyFalsyService
+    TruthyFalsyService,
+    SellerService
   ]
 })
 export class SharedModule { }

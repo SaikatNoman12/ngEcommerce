@@ -6,9 +6,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class TruthyFalsyService {
 
-  accountDropDown = new BehaviorSubject(false);
+  /* -----::USE FOR ACCOUNT DROPDOWN SHOW::----- */
+  accountDropDown = new BehaviorSubject<boolean>(false);
 
   constructor() { }
 
-
+  
 }
