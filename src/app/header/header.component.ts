@@ -12,25 +12,31 @@ export class HeaderComponent implements OnInit {
   accountDropDown: boolean = false;
 
   constructor(
-    private _truthyFalsy: TruthyFalsyService
+    private _truthyFalsy: TruthyFalsyService,
   ) {
 
-    /* ----:USE FOR ACCOUNT DROPDOWN:---- */
+    /* ----::USE FOR ACCOUNT DROPDOWN::---- */
     _truthyFalsy.accountDropDown.subscribe(
       (response: any) => {
         this.accountDropDown = response;
       }
     );
+
   }
 
+  /* ----::ANGULAR OnInit HOOK::---- */
   ngOnInit(): void {
+
     document.body.addEventListener('click', () => {
       this._truthyFalsy.accountDropDown.next(false);
     });
+    
   }
 
-  onShowAccountDrDwn(eev: any) {
-    eev.stopPropagation()
+  /* ----:USE FOR ACCOUNT DROPDOWN:---- */
+  onShowAccountDrDwn(event: any): void {
+    event.stopPropagation();
+
     this.accountDropDown = !this.accountDropDown;
     this._truthyFalsy.accountDropDown.next(this.accountDropDown);
   }
