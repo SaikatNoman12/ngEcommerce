@@ -2,6 +2,7 @@ import { SellerService } from './../services/seller/seller.service';
 import { SellerSignUp } from './../interfaces/seller-sign-up';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-seller-auth',
@@ -17,6 +18,7 @@ export class SellerAuthComponent implements OnInit {
 
   /* -----::ANGULAR CONSTRUCTOR METHOD::----- */
   constructor(
+    private router: Router,
     private fb: FormBuilder,
     private _sellerDBService: SellerService,
   ) { }
@@ -48,6 +50,7 @@ export class SellerAuthComponent implements OnInit {
       this._sellerDBService.signUp(userData).subscribe(
         (res) => {
           console.log(res);
+          this.router.navigate(['seller-home']);
         },
         (err) => { }
       );
