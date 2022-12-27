@@ -14,6 +14,11 @@ const routes: Routes = [
       .then(m => m.SellerAuthModule),
   },
   {
+    path: 'seller-home',
+    loadChildren: () => import('./seller-home/seller-home.module')
+      .then(m => m.SellerHomeModule),
+  },
+  {
     path: '**',
     loadChildren: () => import('./error/error.module')
       .then(m => m.ErrorModule),
