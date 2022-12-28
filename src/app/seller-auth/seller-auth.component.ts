@@ -34,6 +34,10 @@ export class SellerAuthComponent implements OnInit {
 
     /* -----::USE FOR SET URL PATHNAME::----- */
     this.urlPathName = location.pathname.split('/');
+
+
+    /* -----::USE SELLER REFRESH AND AUTO-SIGN-IN::----- */
+    this._sellerDBService.autoSignIn();
   }
 
   /* -----::GET REACTIVE FORM CONTROL::----- */
@@ -44,29 +48,17 @@ export class SellerAuthComponent implements OnInit {
   /* -----::USE FOR FORM::----- */
   onSelFmSubmit(): void {
     if (this.myRecForm.valid) {
-
       const userData: SellerSignUp = this.myRecForm.value;
-
-      this._sellerDBService.signUp(userData).subscribe(
-        (res) => {
-          console.log(res);
-          this.router.navigate(['seller-home']);
-        },
-        (err) => { }
-      );
-
+      this._sellerDBService.signUp(userData);
     }
     else {
-
       const key = Object.keys(this.formControls);
       key.filter(userData => {
         const control = this.myRecForm.controls[userData];
         if (control.errors !== null) {
           control.markAsTouched();
         }
-      }
-      );
-
+      });
     }
   }
 

@@ -1,3 +1,4 @@
+import { SellerGuard } from './auth-guard/seller.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'seller-home',
+    canActivate: [SellerGuard],
     loadChildren: () => import('./seller-home/seller-home.module')
       .then(m => m.SellerHomeModule),
   },
