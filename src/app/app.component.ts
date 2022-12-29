@@ -16,9 +16,12 @@ export class AppComponent {
 
 
   ngOnInit(): void {
+
+    /* -----::USE FOR SELLER DON'T SIGN-UP::----- */
     if (!localStorage.getItem('sellerData')) {
       this.router.navigate(['']);
     }
+
   }
 
 }

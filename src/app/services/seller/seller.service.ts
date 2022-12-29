@@ -43,8 +43,6 @@ export class SellerService {
     if (getLocalData) {
       this.sellerGuard.next(true);
       this.router.navigate(['seller-home']);
-    } else {
-      this.router.navigate(['seller']);
     }
   }
 
