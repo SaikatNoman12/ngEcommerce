@@ -97,6 +97,9 @@
         </ng-container>
 
         <ng-container *ngIf="this.switchToggle">
+          <div class="error-message" *ngIf="isErrorData" >
+            <p>{{isErrorData}}</p>
+          </div>
           <form [formGroup]="myLoginForm" (ngSubmit)="onLoginSubmit()">
             <div class="form-item">
               <div class="form-item-child">
