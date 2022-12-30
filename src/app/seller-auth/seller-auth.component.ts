@@ -1,5 +1,5 @@
 import { SellerService } from './../services/seller/seller.service';
-import { SellerSignUp } from './../interfaces/seller-sign-up';
+import { SellerSignUp, SellerLogin } from './../interfaces/seller-sign-up';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,23 +11,38 @@ import { Router } from '@angular/router';
 })
 export class SellerAuthComponent implements OnInit {
 
-  /* -----::USE FOR FORM::----- */
+  /* -----::USE FOR SWITCH SIGN-UP AND LOGIN::----- */
+  switchToggle: boolean = false;
+
+  /* -----::USE FOR CREATE ACCOUNT::----- */
   myRecForm!: FormGroup;
+
+  /* -----::USE FOR LOGIN::----- */
+  myLoginForm!: FormGroup;
+
   /* -----::USE FOR GET URL PATHNAME::----- */
   urlPathName: any;
 
   /* -----::ANGULAR CONSTRUCTOR METHOD::----- */
   constructor(
-    private router: Router,
+
     private fb: FormBuilder,
     private _sellerDBService: SellerService,
+
   ) { }
 
   /* -----::ANGULAR OnInit HOOK::----- */
   ngOnInit(): void {
-    /* -----::USE FOR FORM::----- */
+
+    /* -----::USE FOR CREATE ACCOUNT::----- */
     this.myRecForm = this.fb.group({
       'name': [null, [Validators.required]],
+      'email': [null, [Validators.required, Validators.email]],
+      'password': [null, [Validators.required, Validators.minLength(8)]],
+    });
+
+    /* -----::USE FOR SELLER LOGIN::----- */
+    this.myLoginForm = this.fb.group({
       'email': [null, [Validators.required, Validators.email]],
       'password': [null, [Validators.required, Validators.minLength(8)]],
     });
@@ -35,9 +50,9 @@ export class SellerAuthComponent implements OnInit {
     /* -----::USE FOR SET URL PATHNAME::----- */
     this.urlPathName = location.pathname.split('/');
 
-
     /* -----::USE SELLER REFRESH AND AUTO-SIGN-IN::----- */
     this._sellerDBService.autoSignIn();
+
   }
 
   /* -----::GET REACTIVE FORM CONTROL::----- */
@@ -45,21 +60,55 @@ export class SellerAuthComponent implements OnInit {
     return this.myRecForm.controls;
   }
 
-  /* -----::USE FOR FORM::----- */
+  /* -----::USE FOR SWITCH SIGN-UP AND LOGIN::----- */
+  get formLoginControls() {
+    return this.myLoginForm.controls;
+  }
+
+  /* -----::USE FOR SELLER LOGIN::----- */
+  onSwitchAccount() {
+    this.switchToggle = !this.switchToggle;
+  }
+
+  /* -----::USE FOR CREATE ACCOUNT::----- */
   onSelFmSubmit(): void {
-    if (this.myRecForm.valid) {
-      const userData: SellerSignUp = this.myRecForm.value;
-      this._sellerDBService.signUp(userData);
-    }
-    else {
-      const key = Object.keys(this.formControls);
-      key.filter(userData => {
-        const control = this.myRecForm.controls[userData];
-        if (control.errors !== null) {
-          control.markAsTouched();
-        }
-      });
+    if (!this.switchToggle) {
+      if (this.myRecForm.valid) {
+        const userData: SellerSignUp = this.myRecForm.value;
+        this._sellerDBService.signUp(userData);
+        console.log('USER CREATE ACCOUNT');
+      }
+      else {
+        const key = Object.keys(this.formControls);
+        key.filter(userData => {
+          const control = this.myRecForm.controls[userData];
+          if (control.errors !== null) {
+            control.markAsTouched();
+          }
+        });
+      }
     }
   }
+
+  /* -----::USE FOR SELLER LOGIN::----- */
+  onLoginSubmit(): void {
+    if (this.switchToggle) {
+      if (this.myLoginForm.valid) {
+        const sellerLog: SellerLogin = this.myLoginForm.value;
+        console.log(sellerLog);
+        console.log('USER LOGIN');
+      }
+      else {
+        const key = Object.keys(this.formLoginControls);
+        key.filter(userData => {
+          const control = this.myRecForm.controls[userData];
+          if (control.errors !== null) {
+            control.markAsTouched();
+          }
+        });
+      }
+    }
+  }
+
 
 }

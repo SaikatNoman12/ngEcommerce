@@ -3,3 +3,8 @@ export interface SellerSignUp {
     email: string;
     password: string;
 }
+
+export interface SellerLogin {
+    email: string;
+    password: string;
+}
