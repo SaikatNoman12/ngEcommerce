@@ -20,7 +20,8 @@ export class AppComponent {
     /* -----::USE FOR SELLER DON'T SIGN-UP::----- */
     if (!localStorage.getItem('sellerData')) {
       const routeLocation = location.pathname;
-      this.router.navigate([routeLocation]);
+      this.router.navigate([routeLocation === '/seller-home' ? '/seller' : routeLocation]);
+      console.log(routeLocation);
     }
 
   }

@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { SellerSignUp } from './../../interfaces/seller-sign-up';
+import { SellerSignUp, SellerLogin } from './../../interfaces/seller-sign-up';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,9 @@ export class SellerService {
 
   /* -----::USE FOR SELLER GUARD::----- */
   sellerGuard = new BehaviorSubject<boolean>(false);
+
+  /* -----::USE FOR SELLER GUARD::----- */
+  isError = new EventEmitter<boolean>(false);
 
   /* -----::USE FOR SELLER SIGNUP URL::----- */
   selSignUpUrl: string = "http://localhost:3000/seller";
@@ -28,7 +31,6 @@ export class SellerService {
     ).subscribe(
       (res) => {
         if (res) {
-          console.log(res);
           this.sellerGuard.next(true);
           localStorage.setItem('sellerData', JSON.stringify(res.body));
           this.router.navigate(['seller-home']);
@@ -45,5 +47,28 @@ export class SellerService {
       this.router.navigate(['seller-home']);
     }
   }
+
+  /* -----::USE SELLER LOGIN::----- */
+  sellerLogin(data: SellerLogin) {
+
+    this.http.get<any>(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`, { observe: 'response' })
+      .subscribe(
+        (result: any) => {
+          if (result && result.body && result.body.length) {
+
+            this.sellerGuard.next(true);
+            localStorage.setItem('sellerData', JSON.stringify(result.body));
+            this.router.navigate(['seller-home']);
+            
+            this.isError.emit(false);
+          }
+          else {
+            this.isError.emit(true);
+          }
+        }
+      )
+
+  }
+
 
 }

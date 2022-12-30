@@ -14,6 +14,9 @@ export class SellerAuthComponent implements OnInit {
   /* -----::USE FOR SWITCH SIGN-UP AND LOGIN::----- */
   switchToggle: boolean = false;
 
+  /* -----::USE FOR LOGIN FIELD & SHOW ERROR::----- */
+  isErrorData: string = '';
+
   /* -----::USE FOR CREATE ACCOUNT::----- */
   myRecForm!: FormGroup;
 
@@ -68,6 +71,7 @@ export class SellerAuthComponent implements OnInit {
   /* -----::USE FOR SELLER LOGIN::----- */
   onSwitchAccount() {
     this.switchToggle = !this.switchToggle;
+    this.isErrorData = '';
   }
 
   /* -----::USE FOR CREATE ACCOUNT::----- */
@@ -94,9 +98,20 @@ export class SellerAuthComponent implements OnInit {
   onLoginSubmit(): void {
     if (this.switchToggle) {
       if (this.myLoginForm.valid) {
-        const sellerLog: SellerLogin = this.myLoginForm.value;
-        console.log(sellerLog);
-        console.log('USER LOGIN');
+        this.isErrorData = '';
+
+        const sellerLogData: SellerLogin = this.myLoginForm.value;
+        this._sellerDBService.sellerLogin(sellerLogData);
+
+        /* -----::USE FOR SELLER ERROR SHOW::----- */
+        this._sellerDBService.isError.subscribe(
+          (error) => {
+            if (error) {
+              this.isErrorData = 'Email or Password is not correct!';
+            }
+          }
+        );
+
       }
       else {
         const key = Object.keys(this.formLoginControls);

@@ -179,6 +179,18 @@ form {
   background: $color-crimson-opacity-2;
 }
 
+.error-message {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.error-message p {
+  color: $color-red-crimson;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 20px;
+}
+
 .seller-account-form-child {
   margin-bottom: 30px;
 }
