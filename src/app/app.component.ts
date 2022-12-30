@@ -19,7 +19,8 @@ export class AppComponent {
 
     /* -----::USE FOR SELLER DON'T SIGN-UP::----- */
     if (!localStorage.getItem('sellerData')) {
-      this.router.navigate(['']);
+      const routeLocation = location.pathname;
+      this.router.navigate([routeLocation]);
     }
 
   }

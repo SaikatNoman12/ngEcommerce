@@ -19,77 +19,140 @@
   <div class="custom-container seller-account-child">
     <div class="account-form-title">
       <h1>
-        <span>Create Seller Account</span>
+        <span>{{
+          !switchToggle ? "Create Seller Account" : "Seller Login"
+        }}</span>
       </h1>
     </div>
 
     <!-- /----::SELLER-ACCOUNT-FORM::----/ -->
     <div class="seller-account-form">
-      <form [formGroup]="myRecForm" (ngSubmit)="onSelFmSubmit()">
-        <div class="form-item">
-          <div class="form-item-child">
-            <label for="name">Name:</label>
-            <input
-              id="name"
-              type="text"
-              placeholder="Enter name..."
-              formControlName="name"
-            />
-          </div>
-          <small
-            *ngIf="!formControls?.['name']?.valid && formControls?.['name']?.touched"
-            class="form-error"
-          >
-            *Please enter your name!
-          </small>
-        </div>
+      <div class="seller-account-form-child">
+        <ng-container *ngIf="!this.switchToggle">
+          <form [formGroup]="myRecForm" (ngSubmit)="onSelFmSubmit()">
+            <div class="form-item">
+              <div class="form-item-child">
+                <label for="name">Name:</label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Enter name..."
+                  formControlName="name"
+                />
+              </div>
+              <small
+                *ngIf="!formControls?.['name']?.valid && formControls?.['name']?.touched"
+                class="form-error"
+              >
+                *Please enter your name!
+              </small>
+            </div>
 
-        <div class="form-item">
-          <div class="form-item-child">
-            <label for="email">Email:</label>
-            <input
-              id="email"
-              type="email"
-              placeholder="Enter email..."
-              formControlName="email"
-            />
-          </div>
-          <small
-            class="form-error"
-            *ngIf="!formControls?.['email']?.valid && formControls?.['email']?.touched"
-          >
-            *Please enter your valid email!
-          </small>
-        </div>
+            <div class="form-item">
+              <div class="form-item-child">
+                <label for="email">Email:</label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="Enter email..."
+                  formControlName="email"
+                />
+              </div>
+              <small
+                class="form-error"
+                *ngIf="!formControls?.['email']?.valid && formControls?.['email']?.touched"
+              >
+                *Please enter your valid email!
+              </small>
+            </div>
 
-        <div class="form-item">
-          <div class="form-item-child">
-            <label for="password">Password:</label>
-            <input
-              id="password"
-              type="password"
-              placeholder="Enter password..."
-              formControlName="password"
-            />
-          </div>
-          <small
-            class="form-error"
-            *ngIf="!formControls?.['password']?.valid && formControls?.['password']?.touched && !formControls?.['password']?.errors?.['minlength']"
-          >
-            *Please enter your valid password!
-          </small>
-          <small
-            class="form-error"
-            *ngIf="!formControls?.['password']?.valid && formControls?.['password']?.touched && formControls?.['password']?.errors?.['minlength']"
-          >
-            *Please enter your password min 8 character!
-          </small>
-        </div>
+            <div class="form-item">
+              <div class="form-item-child">
+                <label for="password">Password:</label>
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="Enter password..."
+                  formControlName="password"
+                />
+              </div>
+              <small
+                class="form-error"
+                *ngIf="!formControls?.['password']?.valid && formControls?.['password']?.touched && !formControls?.['password']?.errors?.['minlength']"
+              >
+                *Please enter your valid password!
+              </small>
+              <small
+                class="form-error"
+                *ngIf="!formControls?.['password']?.valid && formControls?.['password']?.touched && formControls?.['password']?.errors?.['minlength']"
+              >
+                *Please enter your password min 8 character!
+              </small>
+            </div>
 
-        <div class="form-button">
-          <button type="submit">Resister</button>
-        </div>
-      </form>
+            <div class="form-button">
+              <button type="submit">Resister</button>
+            </div>
+          </form>
+        </ng-container>
+
+        <ng-container *ngIf="this.switchToggle">
+          <form [formGroup]="myLoginForm" (ngSubmit)="onLoginSubmit()">
+            <div class="form-item">
+              <div class="form-item-child">
+                <label for="email">Email:</label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="Enter email..."
+                  formControlName="email"
+                />
+              </div>
+              <small
+                class="form-error"
+                *ngIf="!formLoginControls?.['email']?.valid && formLoginControls?.['email']?.touched"
+              >
+                *Please enter your valid email!
+              </small>
+            </div>
+
+            <div class="form-item">
+              <div class="form-item-child">
+                <label for="password">Password:</label>
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="Enter password..."
+                  formControlName="password"
+                />
+              </div>
+              <small
+                class="form-error"
+                *ngIf="!formLoginControls?.['password']?.valid && formLoginControls?.['password']?.touched && !formLoginControls?.['password']?.errors?.['minlength']"
+              >
+                *Please enter your valid password!
+              </small>
+              <small
+                class="form-error"
+                *ngIf="!formLoginControls?.['password']?.valid && formLoginControls?.['password']?.touched && formLoginControls?.['password']?.errors?.['minlength']"
+              >
+                *Please enter your password min 8 character!
+              </small>
+            </div>
+
+            <div class="form-button">
+              <button type="submit">Login</button>
+            </div>
+          </form>
+        </ng-container>
+
+        <h6>
+          {{ !switchToggle ? "Already" : "Don't" }} have account?
+          <a (click)="onSwitchAccount()">
+            click to {{ !switchToggle ? "login" : "sign-up" }}</a
+          >
+        </h6>
+      </div>
 
       <div class="back-store">
         <a href="" routerLink="/">
@@ -102,3 +165,8 @@
     </div>
   </div>
 </div>
+
+<br />
+<br />
+<br />
+<br />

@@ -152,7 +152,7 @@ form {
 }
 
 .form-button {
-  margin-bottom: 24px;
+  margin-bottom: 10px;
   margin-top: 24px;
   text-align: center;
 }
@@ -179,13 +179,35 @@ form {
   background: $color-crimson-opacity-2;
 }
 
+.seller-account-form-child {
+  margin-bottom: 30px;
+}
+
+.seller-account-form-child h6,
+.seller-account-form-child h6 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.seller-account-form-child h6 a {
+  font-weight: 500;
+  text-decoration: underline;
+  display: inline;
+  color: $color-red-crimson;
+}
+
+.seller-account-form-child h6 a:hover {
+  color: crimson;
+}
+
 .back-store a {
   font-weight: 500;
   transition: 300ms;
+  display: inline-block;
 }
 
 .back-store a:hover {
-  color: $color-red-crimson;
+  color: $color-crimson-opacity;
 }
 
 .back-store a span:first-child {
