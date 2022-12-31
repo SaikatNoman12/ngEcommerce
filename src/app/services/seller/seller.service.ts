@@ -12,7 +12,7 @@ export class SellerService {
   /* -----::USE FOR SELLER GUARD::----- */
   sellerGuard = new BehaviorSubject<boolean>(false);
 
-  /* -----::USE FOR SELLER GUARD::----- */
+  /* -----::USE FOR SELLER LOGIN ERROR SHOW::----- */
   isError = new EventEmitter<boolean>(false);
 
   /* -----::USE FOR SELLER SIGNUP URL::----- */
@@ -59,14 +59,16 @@ export class SellerService {
             this.sellerGuard.next(true);
             localStorage.setItem('sellerData', JSON.stringify(result.body));
             this.router.navigate(['seller-home']);
-            
+
+            /* -----::SELLER LOGIN ERROR SHOW::----- */
             this.isError.emit(false);
           }
           else {
+            /* -----::SELLER LOGIN ERROR SHOW::----- */
             this.isError.emit(true);
           }
         }
-      )
+      );
 
   }
 

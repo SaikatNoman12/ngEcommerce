@@ -1,5 +1,6 @@
-import { TruthyFalsyService } from './../services/truthy-falsy.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TruthyFalsyService } from './../services/truthy-falsy.service';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,7 @@ export class HeaderComponent implements OnInit {
   accountDropDown: boolean = false;
 
   constructor(
+    private router: Router,
     private _truthyFalsy: TruthyFalsyService,
   ) {
 
@@ -24,13 +26,31 @@ export class HeaderComponent implements OnInit {
 
   }
 
+  menuType: string = 'default';
+
   /* ----::ANGULAR OnInit HOOK::---- */
   ngOnInit(): void {
 
+    /* ----::USE FOR DROPDOWN HIDE::---- */
     document.body.addEventListener('click', () => {
       this._truthyFalsy.accountDropDown.next(false);
     });
-    
+
+    this.router.events.subscribe(
+      (val: any) => {
+        if (val.url) {
+          if (localStorage.getItem('sellerData') && val.url.includes('seller')) {
+            this.menuType = 'seller';
+            console.log('seller is here');
+          }
+          else {
+            this.menuType = 'default';
+            console.log('seller is not here!');
+          }
+        }
+      }
+    );
+
   }
 
   /* ----:USE FOR ACCOUNT DROPDOWN:---- */

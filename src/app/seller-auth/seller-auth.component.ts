@@ -98,8 +98,7 @@ export class SellerAuthComponent implements OnInit {
   onLoginSubmit(): void {
     if (this.switchToggle) {
       if (this.myLoginForm.valid) {
-        this.isErrorData = '';
-
+        
         const sellerLogData: SellerLogin = this.myLoginForm.value;
         this._sellerDBService.sellerLogin(sellerLogData);
 
