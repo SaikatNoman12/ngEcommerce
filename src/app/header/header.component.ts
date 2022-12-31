@@ -11,6 +11,12 @@ export class HeaderComponent implements OnInit {
 
   /* ----:USE FOR ACCOUNT DROPDOWN:---- */
   accountDropDown: boolean = false;
+  
+  /* ----:USE FOR CHANGE HEDER:---- */
+  menuType: string = 'default';
+  
+  /* ----:USE FOR USER NAME GET LOCAL STORAGE:---- */
+  userName: string = '';
 
   constructor(
     private router: Router,
@@ -26,8 +32,6 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  menuType: string = 'default';
-
   /* ----::ANGULAR OnInit HOOK::---- */
   ngOnInit(): void {
 
@@ -41,11 +45,17 @@ export class HeaderComponent implements OnInit {
         if (val.url) {
           if (localStorage.getItem('sellerData') && val.url.includes('seller')) {
             this.menuType = 'seller';
-            console.log('seller is here');
+
+            /* ----::USE FOR SELLER COMPONENT ROUTING::---- */
+            if (localStorage.getItem('sellerData')) {
+              let localStore = localStorage.getItem('sellerData');
+              const localData = localStore && JSON.parse(localStore)[0].name.split(' ').join('');
+              this.userName = localData;
+            }
+
           }
           else {
             this.menuType = 'default';
-            console.log('seller is not here!');
           }
         }
       }
@@ -60,5 +70,12 @@ export class HeaderComponent implements OnInit {
     this.accountDropDown = !this.accountDropDown;
     this._truthyFalsy.accountDropDown.next(this.accountDropDown);
   }
+
+  /* ----:USE FOR SELLER LOGOUT:---- */
+  sellerLogout() {
+    localStorage.removeItem('sellerData');
+    this.router.navigate([''])
+  }
+
 
 }
