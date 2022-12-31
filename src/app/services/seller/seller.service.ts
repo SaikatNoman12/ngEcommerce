@@ -1,8 +1,8 @@
-import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
-import { SellerSignUp, SellerLogin } from './../../interfaces/seller-sign-up';
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { SellerLogin, SellerSignUp } from './../../interfaces/seller-sign-up';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +32,7 @@ export class SellerService {
       (res) => {
         if (res) {
           this.sellerGuard.next(true);
-          localStorage.setItem('sellerData', JSON.stringify(res.body));
+          localStorage.setItem('sellerData', JSON.stringify([res.body]));
           this.router.navigate(['seller-home']);
         }
       }
@@ -58,6 +58,7 @@ export class SellerService {
 
             this.sellerGuard.next(true);
             localStorage.setItem('sellerData', JSON.stringify(result.body));
+            console.log();
             this.router.navigate(['seller-home']);
 
             /* -----::SELLER LOGIN ERROR SHOW::----- */

@@ -11,10 +11,10 @@ export class HeaderComponent implements OnInit {
 
   /* ----:USE FOR ACCOUNT DROPDOWN:---- */
   accountDropDown: boolean = false;
-  
+
   /* ----:USE FOR CHANGE HEDER:---- */
   menuType: string = 'default';
-  
+
   /* ----:USE FOR USER NAME GET LOCAL STORAGE:---- */
   userName: string = '';
 
@@ -45,14 +45,6 @@ export class HeaderComponent implements OnInit {
         if (val.url) {
           if (localStorage.getItem('sellerData') && val.url.includes('seller')) {
             this.menuType = 'seller';
-
-            /* ----::USE FOR SELLER COMPONENT ROUTING::---- */
-            if (localStorage.getItem('sellerData')) {
-              let localStore = localStorage.getItem('sellerData');
-              const localData = localStore && JSON.parse(localStore)[0].name.split(' ').join('');
-              this.userName = localData;
-            }
-
           }
           else {
             this.menuType = 'default';
