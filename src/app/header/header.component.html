@@ -220,15 +220,20 @@
             </div>
             <div class="nav-item">
               <p>
-                <a href="" routerLinkActive="">
+                <a (click)="sellerLogout()">
                   {{ "Logout" | uppercase }}
                 </a>
               </p>
             </div>
             <div class="nav-item">
               <p>
-                <a href="" routerLinkActive="">
-                  {{ "Seller Name" | uppercase }}
+                <a
+                  title="seller-data"
+                  href=""
+                  [routerLink]="'seller?-' + userName"
+                  routerLinkActive="active"
+                >
+                  {{ "Seller" | uppercase }}
                 </a>
               </p>
             </div>

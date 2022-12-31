@@ -1,6 +1,5 @@
-import { Router } from '@angular/router';
-import { SellerService } from './services/seller/seller.service';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +13,11 @@ export class AppComponent {
     private router: Router
   ) { }
 
-
   ngOnInit(): void {
 
     /* -----::USE FOR SELLER DON'T SIGN-UP::----- */
     if (!localStorage.getItem('sellerData')) {
-      const routeLocation = location.pathname === '/seller-home' ? '/seller' : location.pathname;
+      const routeLocation = location.pathname.includes('seller') ? '/seller' : location.pathname;
       this.router.navigate([routeLocation]);
     }
 

@@ -21,6 +21,12 @@ const routes: Routes = [
       .then(m => m.SellerHomeModule),
   },
   {
+    path:':userName',
+    canActivate: [SellerGuard],
+    loadChildren: () => import('./seller-data/seller-data.module')
+      .then(m => m.SellerDataModule),
+  },
+  {
     path: '**',
     loadChildren: () => import('./error/error.module')
       .then(m => m.ErrorModule),
@@ -31,4 +37,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+}
