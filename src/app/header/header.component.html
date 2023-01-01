@@ -206,34 +206,22 @@
             </div>
             <div class="nav-item">
               <p>
-                <a href="" routerLinkActive="">
-                  {{ "Product List" | uppercase }}
-                </a>
-              </p>
-            </div>
-            <div class="nav-item">
-              <p>
-                <a href="" routerLinkActive="">
+                <a routerLink="/seller-add-product" routerLinkActive="active">
                   {{ "Add product" | uppercase }}
                 </a>
               </p>
             </div>
             <div class="nav-item">
               <p>
-                <a (click)="sellerLogout()">
-                  {{ "Logout" | uppercase }}
+                <a href="" routerLinkActive="/seller-product-list">
+                  {{ "Product List" | uppercase }}
                 </a>
               </p>
             </div>
-            <div class="nav-item">
+            <div class="nav-item nav-log-out">
               <p>
-                <a
-                  title="seller-data"
-                  href=""
-                  routerLink="seller-data"
-                  routerLinkActive="active"
-                >
-                  {{ "Seller" | uppercase }}
+                <a (click)="sellerLogout()">
+                  {{ "Logout" | uppercase }}
                 </a>
               </p>
             </div>
