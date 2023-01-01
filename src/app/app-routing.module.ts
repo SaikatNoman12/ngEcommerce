@@ -21,10 +21,10 @@ const routes: Routes = [
       .then(m => m.SellerHomeModule),
   },
   {
-    path: 'seller-data',
+    path: 'seller-add-product',
     canActivate: [SellerGuard],
-    loadChildren: () => import('./seller-data/seller-data.module')
-      .then(m => m.SellerDataModule),
+    loadChildren: () => import('./seller-add-product/seller-add-product.module')
+      .then(m => m.SellerAddProductModule),
   },
   {
     path: '**',

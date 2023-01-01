@@ -412,6 +412,27 @@
   color: $color-red-crimson;
 }
 
+.nav-item.nav-log-out p {
+  line-height: initial !important;
+}
+
+.nav-log-out p a {
+  padding: 4px 16px 4px 16px;
+  background: $color-red-crimson;
+  border-radius: 4px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500 !important;
+  transition: 300ms !important;
+}
+
+.nav-item.nav-log-out p a:hover {
+  color: #fff !important;
+  background-color: #cc1720;
+}
+
 .special button {
   border: 0px;
   outline: 0px;

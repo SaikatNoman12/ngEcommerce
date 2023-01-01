@@ -1,0 +1,136 @@
+<!-- /----::CREATE SELLER ACCOUNT FORM::----/ -->
+<div class="seller-account">
+  <div class="custom-container seller-account-child">
+    <div class="account-form-title">
+      <h1>
+        <span>Add Product</span>
+      </h1>
+    </div>
+
+    <!-- /----::SELLER-ACCOUNT-FORM::----/ -->
+    <div class="seller-account-form">
+      <div class="seller-account-form-child">
+        <ng-container>
+          <form>
+            <!-- /-----::TOTAL INPUT::-----/ -->
+            <div class="total-input">
+              <div class="form-item">
+                <div class="form-item-child">
+                  <label for="name">Product Name:</label>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="Enter product name..."
+                    formControlName="product-name"
+                  />
+                </div>
+                <small
+                  class="form-error"
+                  *ngIf="!formControls?.['product-name']?.valid && formControls?.['product-name']?.touched"
+                >
+                  *Please enter your product name!
+                </small>
+              </div>
+
+              <div class="form-item">
+                <div class="form-item-child">
+                  <label for="price">Product Price:</label>
+                  <input
+                    id="price"
+                    type="text"
+                    placeholder="Enter product price..."
+                    formControlName="product-price"
+                  />
+                </div>
+                <small
+                  class="form-error"
+                  *ngIf="!formControls?.['product-price']?.valid && formControls?.['product-price']?.touched"
+                >
+                  *Please enter your product price!
+                </small>
+              </div>
+
+              <div class="form-item">
+                <div class="form-item-child">
+                  <label for="color">Product Color:</label>
+                  <input
+                    id="color"
+                    type="text"
+                    placeholder="Enter product color..."
+                    formControlName="product-color"
+                  />
+                </div>
+                <small
+                  class="form-error"
+                  *ngIf="!formControls?.['product-color']?.valid && formControls?.['product-color']?.touched"
+                >
+                  *Please enter your product color!
+                </small>
+              </div>
+
+              <div class="form-item">
+                <div class="form-item-child">
+                  <label for="category">Product Category:</label>
+                  <input
+                    id="category"
+                    type="text"
+                    placeholder="Enter product category..."
+                    formControlName="product-category"
+                  />
+                </div>
+                <small
+                  class="form-error"
+                  *ngIf="!formControls?.['product-category']?.valid && formControls?.['product-category']?.touched"
+                >
+                  *Please enter your product category!
+                </small>
+              </div>
+
+              <div class="form-item">
+                <div class="form-item-child">
+                  <label for="image-url">Product Image URL:</label>
+                  <input
+                    id="image-url"
+                    type="text"
+                    placeholder="Enter product image url..."
+                    formControlName="product-image"
+                  />
+                </div>
+                <small
+                  class="form-error"
+                  *ngIf="!formControls?.['product-image']?.valid && formControls?.['product-image']?.touched"
+                >
+                  *Please enter your product category!
+                </small>
+              </div>
+            </div>
+
+            <!-- /-----::TEXTAREA::-----/ -->
+            <div class="form-item">
+              <div class="form-item-child">
+                <label for="description">Product Image URL:</label>
+                <textarea
+                  id="description"
+                  cols="30"
+                  rows="6"
+                  formControlName="product-description"
+                  placeholder="Enter product description..."
+                ></textarea>
+              </div>
+              <small
+                class="form-error"
+                *ngIf="!formControls?.['product-image']?.valid && formControls?.['product-image']?.touched"
+              >
+                *Please enter your product description!
+              </small>
+            </div>
+
+            <div class="form-button">
+              <button type="submit">Add Product</button>
+            </div>
+          </form>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
