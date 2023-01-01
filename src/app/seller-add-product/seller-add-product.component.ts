@@ -19,11 +19,7 @@ export class SellerAddProductComponent implements OnInit {
   ngOnInit(): void {
     this.myRecForm = this.fBuilder.group({
       "productName": [null, [Validators.required]],
-      "productPrice": [null,
-        [
-          Validators.required,
-          NumberValidateService.numeric
-        ]],
+      "productPrice": [null, [Validators.required, NumberValidateService.numeric]],
       "productColor": [null, [Validators.required]],
       "productCategory": [null, [Validators.required]],
       "productImage": [null, [Validators.required]],
