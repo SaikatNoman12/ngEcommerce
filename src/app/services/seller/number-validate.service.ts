@@ -8,7 +8,6 @@ export class NumberValidateService {
 
   constructor() { }
 
-
   static numeric(control: AbstractControl) {
     let val = control.value;
 
@@ -16,9 +15,9 @@ export class NumberValidateService {
       return null;
     };
 
-    if (!val.toString()) return {
-      'invalidNumber': true
-    };
+    if (!val.toString().match(/^[0-9]+(\.?[0-9]+)?$/)) {
+      return { 'invalidNumber': true };
+    }
 
     return null;
   }

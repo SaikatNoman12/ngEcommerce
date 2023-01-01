@@ -11,7 +11,7 @@
     <div class="seller-account-form">
       <div class="seller-account-form-child">
         <ng-container>
-          <form>
+          <form [formGroup]="myRecForm" (ngSubmit)="myRecFormSubmit()">
             <!-- /-----::TOTAL INPUT::-----/ -->
             <div class="total-input">
               <div class="form-item">
@@ -21,12 +21,12 @@
                     id="name"
                     type="text"
                     placeholder="Enter product name..."
-                    formControlName="product-name"
+                    formControlName="productName"
                   />
                 </div>
                 <small
                   class="form-error"
-                  *ngIf="!formControls?.['product-name']?.valid && formControls?.['product-name']?.touched"
+                  *ngIf="!formControls?.['productName']?.valid && formControls?.['productName']?.touched"
                 >
                   *Please enter your product name!
                 </small>
@@ -39,14 +39,20 @@
                     id="price"
                     type="text"
                     placeholder="Enter product price..."
-                    formControlName="product-price"
+                    formControlName="productPrice"
                   />
                 </div>
                 <small
                   class="form-error"
-                  *ngIf="!formControls?.['product-price']?.valid && formControls?.['product-price']?.touched"
+                  *ngIf="!formControls?.['productPrice']?.valid && formControls?.['productPrice']?.touched && !formControls?.['productPrice']?.errors?.['invalidNumber']"
                 >
                   *Please enter your product price!
+                </small>
+                <small
+                  class="form-error"
+                  *ngIf="formControls?.['productPrice']?.errors?.['invalidNumber']"
+                >
+                  *Please enter number!
                 </small>
               </div>
 
@@ -57,12 +63,12 @@
                     id="color"
                     type="text"
                     placeholder="Enter product color..."
-                    formControlName="product-color"
+                    formControlName="productColor"
                   />
                 </div>
                 <small
                   class="form-error"
-                  *ngIf="!formControls?.['product-color']?.valid && formControls?.['product-color']?.touched"
+                  *ngIf="!formControls?.['productColor']?.valid && formControls?.['productColor']?.touched"
                 >
                   *Please enter your product color!
                 </small>
@@ -75,12 +81,12 @@
                     id="category"
                     type="text"
                     placeholder="Enter product category..."
-                    formControlName="product-category"
+                    formControlName="productCategory"
                   />
                 </div>
                 <small
                   class="form-error"
-                  *ngIf="!formControls?.['product-category']?.valid && formControls?.['product-category']?.touched"
+                  *ngIf="!formControls?.['productCategory']?.valid && formControls?.['productCategory']?.touched"
                 >
                   *Please enter your product category!
                 </small>
@@ -93,12 +99,12 @@
                     id="image-url"
                     type="text"
                     placeholder="Enter product image url..."
-                    formControlName="product-image"
+                    formControlName="productImage"
                   />
                 </div>
                 <small
                   class="form-error"
-                  *ngIf="!formControls?.['product-image']?.valid && formControls?.['product-image']?.touched"
+                  *ngIf="!formControls?.['productImage']?.valid && formControls?.['productImage']?.touched"
                 >
                   *Please enter your product category!
                 </small>
@@ -113,13 +119,19 @@
                   id="description"
                   cols="30"
                   rows="6"
-                  formControlName="product-description"
+                  formControlName="productDescription"
                   placeholder="Enter product description..."
                 ></textarea>
               </div>
               <small
                 class="form-error"
-                *ngIf="!formControls?.['product-image']?.valid && formControls?.['product-image']?.touched"
+                *ngIf="!formControls?.['productDescription']?.valid && formControls?.['productDescription']?.touched"
+              >
+                *Please enter your product description!
+              </small>
+              <small
+                class="form-error"
+                *ngIf="!formControls?.['productDescription']?.valid && formControls?.['productDescription']?.touched"
               >
                 *Please enter your product description!
               </small>
