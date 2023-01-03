@@ -11,48 +11,17 @@
       "email": "saiful@gmail.com",
       "password": "siful230",
       "id": 2
-    },
+    }
+  ],
+  "products": [
     {
-      "name": "Abdullah Al Nomaan",
-      "email": "saifulkarim@gmail.com",
-      "password": "siful230",
-      "id": 3
-    },
-    {
-      "name": "dsdfsdsd",
-      "email": "saifudfsdfsdsdsfdfsdl@gmail.com",
-      "password": "siful230",
-      "id": 4
-    },
-    {
-      "name": "Abdullah Al Nomaan",
-      "email": "saifsdfdfsdfsdul@gmail.com",
-      "password": "siful230",
-      "id": 5
-    },
-    {
-      "name": "Shamim Hossen",
-      "email": "saifuldfsdfsdf@gmail.com",
-      "password": "siful230",
-      "id": 6
-    },
-    {
-      "name": "Shamim Hossen",
-      "email": "shamim@gmail.com",
-      "password": "siful230",
-      "id": 7
-    },
-    {
-      "name": "fddddddd",
-      "email": "abdul@gmail.com",
-      "password": "siful230",
-      "id": 8
-    },
-    {
-      "name": "kamrul",
-      "email": "kamrul@gmail.com",
-      "password": "siful230",
-      "id": 9
+      "productName": "I Phone 14",
+      "productPrice": "100000",
+      "productColor": "gold",
+      "productCategory": "Mobile",
+      "productImage": "https://image.cnbcfm.com/api/v1/image/107118102-1663119439842-IMG_29011.jpg?v=1663183051",
+      "productDescription": "This is very good phone for user.",
+      "id": 1
     }
   ]
 }
