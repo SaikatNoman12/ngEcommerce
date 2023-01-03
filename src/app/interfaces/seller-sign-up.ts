@@ -11,7 +11,7 @@ export interface SellerLogin {
 
 export interface addProduct {
     productName: string;
-    productPrice: string;
+    productPrice: number;
     productColor: string;
     productCategory: string;
     productImage: string;

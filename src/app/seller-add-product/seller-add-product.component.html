@@ -7,6 +7,10 @@
       </h1>
     </div>
 
+    <div *ngIf="showSuccess" class="success-message-show">
+      <p>{{ showSuccess }}</p>
+    </div>
+
     <!-- /----::SELLER-ACCOUNT-FORM::----/ -->
     <div class="seller-account-form">
       <div class="seller-account-form-child">
@@ -104,9 +108,15 @@
                 </div>
                 <small
                   class="form-error"
-                  *ngIf="!formControls?.['productImage']?.valid && formControls?.['productImage']?.touched"
+                  *ngIf="!formControls?.['productImage']?.valid && formControls?.['productImage']?.touched && !formControls?.['productImage']?.errors?.['nomatch']"
                 >
-                  *Please enter your product category!
+                  *Please enter your url!
+                </small>
+                <small
+                  class="form-error"
+                  *ngIf="formControls?.['productImage']?.errors?.['nomatch']"
+                >
+                  *Please enter your valid url!
                 </small>
               </div>
             </div>
