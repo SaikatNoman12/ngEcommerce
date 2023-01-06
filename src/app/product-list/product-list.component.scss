@@ -1,0 +1,64 @@
+@import "../../theme/variable";
+
+.seller-products {
+  width: 100%;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th {
+  border: 1px solid $color-red-crimson;
+  font-size: 20px;
+  font-weight: 500;
+  color: $list-text-color;
+  padding: 8px 26px;
+}
+
+table td {
+  border: 1px solid $color-red-crimson;
+  font-size: 20px;
+  font-weight: 500;
+  color: $list-text-color;
+  padding: 8px 26px;
+}
+
+table th:first-child {
+  text-align: center;
+}
+
+table td:first-child {
+  padding: 8px;
+  width: 180px;
+  min-width: 180px;
+  height: 130px;
+}
+table td:nth-child(2) {
+  min-width: 200px;
+  max-width: 200px;
+}
+table td:nth-child(3) {
+  min-width: 200px;
+  max-width: 200px;
+}
+table td:nth-child(4) {
+  min-width: 200px;
+  max-width: 200px;
+}
+table td:nth-child(5) {
+  min-width: 200px;
+  max-width: 200px;
+}
+table td:nth-child(6) {
+  min-width: 200px;
+  max-width: 500px;
+}
+
+table td:first-child img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  margin: 0px auto;
+}

@@ -13,8 +13,14 @@ export class SellerAddProductService {
     private http: HttpClient
   ) { }
 
+  /* ----::USE FOR SELLER ADD PRODUCT::---- */
   onAddProduct(data: addProduct) {
     return this.http.post(this.sellerProAddUrl, data);
+  }
+
+  /* ----::USE FOR SELLER PRODUCTS GET::---- */
+  onGetSellerProduct() {
+    return this.http.get<addProduct[]>('http://localhost:3000/products');
   }
 
 }
