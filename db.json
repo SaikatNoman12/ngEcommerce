@@ -22,6 +22,15 @@
       "productImage": "https://image.cnbcfm.com/api/v1/image/107118102-1663119439842-IMG_29011.jpg?v=1663183051",
       "productDescription": "This is very good phone for user.",
       "id": 1
+    },
+    {
+      "productName": "Laptop",
+      "productPrice": "10000",
+      "productColor": "Silver",
+      "productCategory": "Computer",
+      "productImage": "https://cdn.mos.cms.futurecdn.net/qWQ2TwMjVNV9ZcbpBoCm5S.jpg",
+      "productDescription": "Use for coding",
+      "id": 2
     }
   ]
 }

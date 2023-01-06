@@ -213,7 +213,11 @@
             </div>
             <div class="nav-item">
               <p>
-                <a href="" routerLinkActive="/seller-product-list">
+                <a
+                  href=""
+                  routerLink="/seller-product-list"
+                  routerLinkActive="active"
+                >
                   {{ "Product List" | uppercase }}
                 </a>
               </p>
@@ -287,7 +291,12 @@
           </div>
           <div class="nav-item">
             <p>
-              <a href="" routerLink="seller" routerLinkActive="active">
+              <a
+                href=""
+                (click)="routeChange()"
+                routerLink="{{ sellerOrHome ? sellerOrHome : 'seller' }}"
+                routerLinkActive="active"
+              >
                 {{ "Seller" | uppercase }}
               </a>
             </p>

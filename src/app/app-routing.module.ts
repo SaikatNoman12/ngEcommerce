@@ -27,6 +27,12 @@ const routes: Routes = [
       .then(m => m.SellerAddProductModule),
   },
   {
+    path: 'seller-product-list',
+    canActivate: [SellerGuard],
+    loadChildren: () => import('./product-list/product-list.module')
+      .then(m => m.ProductListModule),
+  },
+  {
     path: '**',
     loadChildren: () => import('./error/error.module')
       .then(m => m.ErrorModule),

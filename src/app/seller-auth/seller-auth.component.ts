@@ -1,8 +1,7 @@
-import { SellerService } from './../services/seller/seller.service';
-import { SellerSignUp, SellerLogin } from './../interfaces/seller-sign-up';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { SellerLogin, SellerSignUp } from './../interfaces/seller-sign-up';
+import { SellerService } from './../services/seller/seller.service';
 
 @Component({
   selector: 'app-seller-auth',
@@ -54,7 +53,7 @@ export class SellerAuthComponent implements OnInit {
     this.urlPathName = location.pathname.split('/');
 
     /* -----::USE SELLER REFRESH AND AUTO-SIGN-IN::----- */
-    this._sellerDBService.autoSignIn();
+    // this._sellerDBService.autoSignIn();
 
   }
 
@@ -98,7 +97,7 @@ export class SellerAuthComponent implements OnInit {
   onLoginSubmit(): void {
     if (this.switchToggle) {
       if (this.myLoginForm.valid) {
-        
+
         const sellerLogData: SellerLogin = this.myLoginForm.value;
         this._sellerDBService.sellerLogin(sellerLogData);
 

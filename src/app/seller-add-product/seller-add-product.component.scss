@@ -1,43 +1,4 @@
 @import "../../theme//variable.scss";
-
-.seller-account {
-  width: 100%;
-  margin-bottom: 36px;
-}
-
-.seller-account-child {
-  width: 100%;
-}
-
-.account-form-title h1 {
-  font-weight: 500;
-  font-size: 26px;
-  text-transform: capitalize;
-  margin-bottom: 30px;
-  position: relative;
-  margin-top: 10px;
-  border-bottom: 2px solid #e4e4e4;
-  text-align: center;
-  position: relative;
-  padding: 4px 0px;
-}
-
-.account-form-title h1 span {
-  position: relative;
-}
-
-.account-form-title h1 span::after {
-  content: "";
-  width: 50%;
-  bottom: -4px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 2;
-  border-bottom: 2px solid $color-red-crimson;
-}
-
 /* -----::SELLER_ACCOUNT_FORM::----- */
 .seller-account-form {
   border: 1px solid $color-light-2;
@@ -163,10 +124,6 @@ form {
 }
 
 @media (max-width: 556px) {
-  .account-form-title h1 {
-    font-size: 20px;
-  }
-
   .form-button button {
     font-size: 14px;
     padding: 4px 12px;

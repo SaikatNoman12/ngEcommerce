@@ -9,6 +9,8 @@ import { TruthyFalsyService } from './../services/truthy-falsy.service';
 })
 export class HeaderComponent implements OnInit {
 
+  sellerOrHome: string = 'seller';
+
   /* ----:USE FOR ACCOUNT DROPDOWN:---- */
   accountDropDown: boolean = false;
 
@@ -53,6 +55,19 @@ export class HeaderComponent implements OnInit {
       }
     );
 
+
+
+  }
+
+  routeChange() {
+    if (localStorage.getItem('sellerData')) {
+      this.router.navigate(['seller-home']);
+      this.sellerOrHome = '/seller-home';
+    }
+    else {
+      this.router.navigate(['seller']);
+      this.sellerOrHome = '';
+    }
   }
 
   /* ----:USE FOR ACCOUNT DROPDOWN:---- */

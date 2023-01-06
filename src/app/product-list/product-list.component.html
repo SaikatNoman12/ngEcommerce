@@ -1,0 +1,46 @@
+<!-- /----::CREATE SELLER ACCOUNT FORM::----/ -->
+<div class="seller-account">
+  <div class="custom-container seller-account-child">
+    <div class="account-form-title">
+      <h1>
+        <span>Product List</span>
+      </h1>
+    </div>
+
+    <div class="seller-products">
+      <ng-container *ngIf="!showSpinner">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Color</th>
+              <th>Category</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let product of productList">
+              <tr>
+                <td>
+                  <img src="{{ product.productImage }}" alt="" />
+                </td>
+                <td>{{ product.productName }}</td>
+                <td>{{ product.productPrice }}</td>
+                <td>{{ product.productColor }}</td>
+                <td>{{ product.productCategory }}</td>
+                <td>{{ product.productDescription }}</td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </ng-container>
+      <ng-container *ngIf="showSpinner">
+        <div class="loading-spine">
+          <p>Loading...</p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
