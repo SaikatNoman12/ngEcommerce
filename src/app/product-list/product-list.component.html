@@ -18,6 +18,7 @@
               <th>Color</th>
               <th>Category</th>
               <th>Description</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -31,6 +32,11 @@
                 <td>{{ product.productColor }}</td>
                 <td>{{ product.productCategory }}</td>
                 <td>{{ product.productDescription }}</td>
+                <td>
+                  <button (click)="onDelProduct(product.id)" type="button">
+                    {{ "Delete" | uppercase }}
+                  </button>
+                </td>
               </tr>
             </ng-container>
           </tbody>

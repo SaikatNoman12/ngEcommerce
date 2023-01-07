@@ -15,22 +15,13 @@
   ],
   "products": [
     {
-      "productName": "I Phone 14",
-      "productPrice": "100000",
+      "productName": "HP Laptop",
+      "productPrice": "111",
       "productColor": "gold",
-      "productCategory": "Mobile",
-      "productImage": "https://image.cnbcfm.com/api/v1/image/107118102-1663119439842-IMG_29011.jpg?v=1663183051",
-      "productDescription": "This is very good phone for user.",
-      "id": 1
-    },
-    {
-      "productName": "Laptop",
-      "productPrice": "10000",
-      "productColor": "Silver",
       "productCategory": "Computer",
-      "productImage": "https://cdn.mos.cms.futurecdn.net/qWQ2TwMjVNV9ZcbpBoCm5S.jpg",
-      "productDescription": "Use for coding",
-      "id": 2
+      "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuu5nkW1B26GEVBWUH55e7z4ys46p6hQ8vsw&usqp=CAU",
+      "productDescription": "Use for coding\n",
+      "id": 1
     }
   ]
 }

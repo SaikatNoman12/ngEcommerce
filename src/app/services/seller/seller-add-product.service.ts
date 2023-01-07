@@ -23,4 +23,9 @@ export class SellerAddProductService {
     return this.http.get<addProduct[]>('http://localhost:3000/products');
   }
 
+  /* ----::USE FOR SELLER PRODUCTS GET::---- */
+  deleteProData(proId: number) {
+    return this.http.delete(`http://localhost:3000/products/${proId}`);
+  }
+
 }
