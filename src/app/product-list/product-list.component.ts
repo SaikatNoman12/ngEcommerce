@@ -12,6 +12,9 @@ export class ProductListComponent implements OnInit {
   /* ----::USE FOR SPINNER SHOW::---- */
   showSpinner: boolean = true;
 
+  showSuccessMessage: string = '';
+  showSuccessMessage2: string = '';
+
   /* ----::USE FOR SELLER PRODUCT STORING::---- */
   productList: undefined | addProduct[];
 
@@ -33,6 +36,14 @@ export class ProductListComponent implements OnInit {
       (result) => {
         this.productList = result;
         this.showSpinner = false;
+
+        /* ----::USE FOR SELLER PRODUCT-LIST MESSAGE EMPTY SHOW::---- */
+        if (this.productList.length > 0) {
+          this.showSuccessMessage = '';
+        }
+        else {
+          this.showSuccessMessage = 'Your product list is empty!';
+        }
       },
       (error) => { }
     );
@@ -43,8 +54,14 @@ export class ProductListComponent implements OnInit {
     this._selAdService.deleteProData(proId).subscribe(
       (res: any) => {
         this.onGetProData();
+
+        /* ----::USE FOR SELLER DELETE SUCCESS MESSAGE SHOW::---- */
+        this.showSuccessMessage2 = 'Your product is deleted!';
+        setTimeout(() => {
+          this.showSuccessMessage2 = '';
+        }, 2000);
       }
-    )
+    );
   }
 
 

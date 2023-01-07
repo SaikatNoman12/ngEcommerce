@@ -13,15 +13,5 @@
       "id": 2
     }
   ],
-  "products": [
-    {
-      "productName": "HP Laptop",
-      "productPrice": "111",
-      "productColor": "gold",
-      "productCategory": "Computer",
-      "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuu5nkW1B26GEVBWUH55e7z4ys46p6hQ8vsw&usqp=CAU",
-      "productDescription": "Use for coding\n",
-      "id": 1
-    }
-  ]
+  "products": []
 }

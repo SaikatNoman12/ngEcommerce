@@ -8,8 +8,18 @@
     </div>
 
     <div class="seller-products">
+      <div class="success-message-show" *ngIf="showSuccessMessage">
+        <p>{{ showSuccessMessage }}</p>
+      </div>
+
+      <div
+        class="success-message-show success-message-show2"
+        *ngIf="showSuccessMessage2 && !showSuccessMessage"
+      >
+        <p>{{ showSuccessMessage2 }}</p>
+      </div>
       <ng-container *ngIf="!showSpinner">
-        <table>
+        <table *ngIf="!showSuccessMessage">
           <thead>
             <tr>
               <th>Image</th>
