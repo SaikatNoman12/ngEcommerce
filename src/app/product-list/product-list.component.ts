@@ -21,16 +21,31 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
 
+
+    /* ----::USE FOR GET SELLER PRODUCT::---- */
+    this.onGetProData();
+
+  }
+
+  /* ----::USE FOR GET SELLER PRODUCT::---- */
+  onGetProData() {
     this._selAdService.onGetSellerProduct().subscribe(
       (result) => {
         this.productList = result;
         this.showSpinner = false;
       },
       (error) => { }
-    )
-
+    );
   }
 
+  /* ----::USE FOR SELLER PRODUCT DELETE::---- */
+  onDelProduct(proId: number) {
+    this._selAdService.deleteProData(proId).subscribe(
+      (res: any) => {
+        this.onGetProData();
+      }
+    )
+  }
 
 
 }

@@ -10,6 +10,7 @@ export interface SellerLogin {
 }
 
 export interface addProduct {
+    id: number;
     productName: string;
     productPrice: number;
     productColor: string;

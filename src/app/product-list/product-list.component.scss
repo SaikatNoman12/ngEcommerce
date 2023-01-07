@@ -9,14 +9,7 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
-table th {
-  border: 1px solid $color-red-crimson;
-  font-size: 20px;
-  font-weight: 500;
-  color: $list-text-color;
-  padding: 8px 26px;
-}
-
+table th,
 table td {
   border: 1px solid $color-red-crimson;
   font-size: 20px;
@@ -25,7 +18,15 @@ table td {
   padding: 8px 26px;
 }
 
+table td {
+  font-size: 16px;
+}
+
 table th:first-child {
+  text-align: center;
+}
+
+table th:last-child {
   text-align: center;
 }
 
@@ -33,22 +34,22 @@ table td:first-child {
   padding: 8px;
   width: 180px;
   min-width: 180px;
-  height: 130px;
+  height: 86px;
 }
 table td:nth-child(2) {
   min-width: 200px;
   max-width: 200px;
 }
 table td:nth-child(3) {
-  min-width: 200px;
+  min-width: 146px;
   max-width: 200px;
 }
 table td:nth-child(4) {
-  min-width: 200px;
+  min-width: 146px;
   max-width: 200px;
 }
 table td:nth-child(5) {
-  min-width: 200px;
+  min-width: 146px;
   max-width: 200px;
 }
 table td:nth-child(6) {
@@ -56,9 +57,28 @@ table td:nth-child(6) {
   max-width: 500px;
 }
 
+table td:last-child {
+  padding: 0px !important;
+}
+
+table td:last-child button {
+  padding: 6px 13px 5px 13px;
+  margin: 0px auto;
+  color: #fff;
+  background-color: $color-red-crimson;
+  border-radius: 4px;
+  font-weight: 500;
+  outline: 0px;
+  border: 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 table td:first-child img {
   width: 100%;
-  height: 130px;
+  height: 86px;
   object-fit: cover;
   margin: 0px auto;
 }
