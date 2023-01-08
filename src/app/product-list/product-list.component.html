@@ -43,9 +43,18 @@
                 <td>{{ product.productCategory }}</td>
                 <td>{{ product.productDescription }}</td>
                 <td>
-                  <button (click)="onDelProduct(product.id)" type="button">
-                    {{ "Delete" | uppercase }}
-                  </button>
+                  <div>
+                    <button (click)="onDelProduct(product.id)" type="button">
+                      {{ "Delete" | uppercase }}
+                    </button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button
+                      routerLink="/seller-update-product/{{ product.id }}"
+                      type="button"
+                    >
+                      {{ "Edit" | uppercase }}
+                    </button>
+                  </div>
                 </td>
               </tr>
             </ng-container>

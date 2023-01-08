@@ -33,6 +33,12 @@ const routes: Routes = [
       .then(m => m.ProductListModule),
   },
   {
+    path: 'seller-update-product/:userId',
+    canActivate: [SellerGuard],
+    loadChildren: () => import('./seller-update-product/seller-update-product.module')
+      .then(m => m.SellerUpdateProductModule),
+  },
+  {
     path: '**',
     loadChildren: () => import('./error/error.module')
       .then(m => m.ErrorModule),

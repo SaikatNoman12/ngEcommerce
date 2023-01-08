@@ -36,6 +36,9 @@ export class AppComponent {
 
     // }
 
+    /* -----::OUR FUNNY MESSAGE::----- */
+    console.log('%cHey, hello mr./ms. Why are you open developer coNsole?', 'background:red; font-size:30px; padding:7px 20px 8px 20px; border-radius:4px;');
+
   }
 
 }
