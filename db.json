@@ -13,5 +13,24 @@
       "id": 2
     }
   ],
-  "products": []
+  "products": [
+    {
+      "productName": "HP Laptop",
+      "productPrice": "111000",
+      "productColor": "Black",
+      "productCategory": "Computer",
+      "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuu5nkW1B26GEVBWUH55e7z4ys46p6hQ8vsw&usqp=CAU",
+      "productDescription": "This computer is use for coding.  ",
+      "id": 1
+    },
+    {
+      "productName": "I Phone 14",
+      "productPrice": "120000",
+      "productColor": "Gold",
+      "productCategory": "Mobile",
+      "productImage": "https://www.androidauthority.com/wp-content/uploads/2022/09/apple-iphone-14-pro-standing.jpg",
+      "productDescription": "This is a gantelman phone.",
+      "id": 2
+    }
+  ]
 }

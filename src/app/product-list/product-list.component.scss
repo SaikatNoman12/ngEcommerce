@@ -61,11 +61,16 @@ table td:last-child {
   padding: 0px !important;
 }
 
-table td:last-child button {
+table td:last-child div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table td:last-child div button {
   padding: 6px 13px 5px 13px;
-  margin: 0px auto;
+  text-align: center;
   color: #fff;
-  background-color: $color-red-crimson;
   border-radius: 4px;
   font-weight: 500;
   outline: 0px;
@@ -74,6 +79,15 @@ table td:last-child button {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: inline;
+}
+
+table td:last-child div button:first-child {
+  background-color: $color-red-crimson;
+}
+
+table td:last-child div button:last-child {
+  background-color: green;
 }
 
 table td:first-child img {
