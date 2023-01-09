@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { addProduct } from '../interfaces/seller-sign-up';
 import { NumberValidateService } from '../services/seller/number-validate.service';
+import { SellerAddProductService } from './../services/seller/seller-add-product.service';
 
 const checkUrl = () => {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -34,11 +36,16 @@ export class SellerUpdateProductComponent implements OnInit {
   /* /-----::USE FOR ADD PRODUCT FORM::-----/ */
   myRecForm!: FormGroup;
 
+  /* /-----::USE FOR LOADER::-----/ */
+  loader: boolean = true;
+
   /* /-----::USE FOR ADD PRODUCT FORM::-----/ */
   showSuccess: undefined | string;
 
   constructor(
     private fBuilder: FormBuilder,
+    private activatedRoute: ActivatedRoute,
+    private _selAddService: SellerAddProductService
   ) { }
 
   ngOnInit(): void {
@@ -53,6 +60,28 @@ export class SellerUpdateProductComponent implements OnInit {
       "productDescription": [null, [Validators.required]],
     });
 
+    /* /-----::USE FOR SET FORM DATA::-----/ */
+    let proUserId = this.activatedRoute.snapshot.paramMap.get('userID');
+    this._selAddService.updatePro(Number(proUserId)).subscribe(
+      (result: addProduct) => {
+
+        this.loader = false;
+
+        /* /-----::USE FOR REACTIVE FORM SET VALUE::-----/ */
+        this.myRecForm.setValue(
+          {
+            'productName': result?.productName,
+            'productPrice': result?.productPrice,
+            'productColor': result?.productColor,
+            'productCategory': result?.productCategory,
+            'productImage': result?.productImage,
+            'productDescription': result?.productDescription,
+          }
+        );
+
+      }
+    );
+
   }
 
   /* /-----::USE FOR ADD PRODUCT FORM::-----/ */
@@ -64,6 +93,7 @@ export class SellerUpdateProductComponent implements OnInit {
   myRecFormSubmit() {
     if (this.myRecForm.valid) {
       const myRecValue: addProduct = this.myRecForm.value;
+      
       /* /-----::USE FOR FORM RESET::-----/ */
       this.myRecForm.reset();
     }

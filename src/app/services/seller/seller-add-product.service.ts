@@ -28,4 +28,9 @@ export class SellerAddProductService {
     return this.http.delete(`http://localhost:3000/products/${proId}`);
   }
 
+  /* ----::GET SINGLE PRODUCTS FOR UPDATE DATA::---- */
+  updatePro(proUserId: number) {
+    return this.http.get<addProduct>(`http://localhost:3000/products/${proUserId}`);
+  }
+
 }
