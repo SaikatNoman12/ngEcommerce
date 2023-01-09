@@ -59,6 +59,8 @@ table td:nth-child(6) {
 
 table td:last-child {
   padding: 0px !important;
+  max-width: 200px;
+  min-width: 200px;
 }
 
 table td:last-child div {

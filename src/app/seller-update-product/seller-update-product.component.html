@@ -7,14 +7,15 @@
       </h1>
     </div>
 
-    <div *ngIf="showSuccess" class="success-message-show">
-      <p>{{ showSuccess }}</p>
-    </div>
-
-    <!-- /----::SELLER-ACCOUNT-FORM::----/ -->
+    <!-- /----::LOADER::----/ -->
     <div *ngIf="loader" class="loader">
       <p>Loading...</p>
     </div>
+    <!-- /----::SUCCESS::----/ -->
+    <div *ngIf="showSuccess" class="success-message-show">
+      <p>Your product is updated!</p>
+    </div>
+
     <div class="seller-account-form">
       <div class="seller-account-form-child">
         <ng-container>

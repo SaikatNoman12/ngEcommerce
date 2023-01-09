@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { addProduct } from '../interfaces/seller-sign-up';
 import { NumberValidateService } from '../services/seller/number-validate.service';
 import { SellerAddProductService } from './../services/seller/seller-add-product.service';
@@ -39,10 +39,18 @@ export class SellerUpdateProductComponent implements OnInit {
   /* /-----::USE FOR LOADER::-----/ */
   loader: boolean = true;
 
+  /* /-----::USE FOR SUCCESS::-----/ */
+  success: string = '';
+
+  /* /-----::USE FOR SUCCESS::-----/ */
+  getSellerProduct: undefined | addProduct;
+
+
   /* /-----::USE FOR ADD PRODUCT FORM::-----/ */
   showSuccess: undefined | string;
 
   constructor(
+    private router: Router,
     private fBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
     private _selAddService: SellerAddProductService
@@ -62,10 +70,14 @@ export class SellerUpdateProductComponent implements OnInit {
 
     /* /-----::USE FOR SET FORM DATA::-----/ */
     let proUserId = this.activatedRoute.snapshot.paramMap.get('userID');
-    this._selAddService.updatePro(Number(proUserId)).subscribe(
+    this._selAddService.getSinglePro(Number(proUserId)).subscribe(
       (result: addProduct) => {
 
+        /* /-----::USE FOR LOADER::-----/ */
         this.loader = false;
+
+        /* /-----::USE SELLER SINGLE PRODUCT STORE::-----/ */
+        this.getSellerProduct = result;
 
         /* /-----::USE FOR REACTIVE FORM SET VALUE::-----/ */
         this.myRecForm.setValue(
@@ -93,7 +105,21 @@ export class SellerUpdateProductComponent implements OnInit {
   myRecFormSubmit() {
     if (this.myRecForm.valid) {
       const myRecValue: addProduct = this.myRecForm.value;
-      
+
+      if (this.getSellerProduct) {
+        myRecValue.id = this.getSellerProduct?.id;
+      }
+      this._selAddService.updatedProduct(myRecValue).subscribe(
+        (result) => {
+          this.showSuccess = 'Your product is updated!';
+        }
+      );
+
+      setTimeout(() => {
+        this.showSuccess = '';
+        this.router.navigate(['seller-product-list']);
+      }, 2000);
+
       /* /-----::USE FOR FORM RESET::-----/ */
       this.myRecForm.reset();
     }

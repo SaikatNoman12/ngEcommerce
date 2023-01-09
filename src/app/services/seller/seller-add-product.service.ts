@@ -29,8 +29,14 @@ export class SellerAddProductService {
   }
 
   /* ----::GET SINGLE PRODUCTS FOR UPDATE DATA::---- */
-  updatePro(proUserId: number) {
+  getSinglePro(proUserId: number) {
     return this.http.get<addProduct>(`http://localhost:3000/products/${proUserId}`);
   }
+
+  /* ----::USE FOR UPDATE DATA::---- */
+  updatedProduct(product: addProduct) {
+    return this.http.put(`http://localhost:3000/products/${product.id}`, product);
+  }
+
 
 }
