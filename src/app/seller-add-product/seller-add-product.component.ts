@@ -13,7 +13,7 @@ const checkUrl = () => {
       return null;
     }
 
-    if (value && valueSlice.length > 0 && valueSlice === 'https://') {
+    if (value && valueSlice.length > 0 && (valueSlice === 'https://' || valueSlice === 'http://')) {
       return null;
     }
     else {
