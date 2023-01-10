@@ -14,7 +14,7 @@ const checkUrl = () => {
       return null;
     }
 
-    if (value && valueSlice.length > 0 && valueSlice === 'https://') {
+    if (value && valueSlice.length > 0 && (valueSlice === 'https://' || valueSlice === 'http://')) {
       return null;
     }
     else {
@@ -44,7 +44,6 @@ export class SellerUpdateProductComponent implements OnInit {
 
   /* /-----::USE FOR SUCCESS::-----/ */
   getSellerProduct: undefined | addProduct;
-
 
   /* /-----::USE FOR ADD PRODUCT FORM::-----/ */
   showSuccess: undefined | string;
