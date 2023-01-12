@@ -15,7 +15,7 @@
 
 @media (max-width: 742px) {
   .header-main {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
 
@@ -165,6 +165,12 @@
   margin-top: 30px;
 }
 
+@media (max-width: 742px) {
+  .slider-ser-appto .ser-appto {
+    margin-top: 20px;
+  }
+}
+
 /* /-----::SLIDER-SECTION::-----/ */
 .slider-items {
   width: 100%;
@@ -204,7 +210,7 @@
 .slider-content a .slider-content-child .slider-content-child-child {
   position: absolute;
   top: 20%;
-  left: 10%;
+  left: 5%;
   min-width: 700px;
   max-width: 700px;
   height: auto;
@@ -351,7 +357,7 @@
 
   .slider-content-child-child button {
     margin-top: 8px;
-    padding: 6px 12px 4px 12px;
+    padding: 4px 12px 4px 12px;
     font-size: 12px;
   }
 }
@@ -482,17 +488,29 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .ser-appto .ser-appto-item-main {
-    margin-bottom: 12px;
-  }
-
-  .ser-appto .ser-appto-item-main:last-child {
-    margin-bottom: 0px;
-  }
-
   .ser-appto .ser-appto-item-main:nth-child(2) {
     border-left: 0px;
     border-right: 0px;
+  }
+
+  .ser-appto .ser-appto-item-main .ser-appto-item {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .ser-appto .ser-appto-item-main:first-child .ser-appto-item {
+    border-top: 0px;
+    padding-top: 0px;
+  }
+
+  .ser-appto .ser-appto-item-main:nth-child(even) .ser-appto-item {
+    border-top: 1px solid $color-red-crimson;
+    border-bottom: 1px solid $color-red-crimson;
+  }
+
+  .ser-appto .ser-appto-item-main:last-child .ser-appto-item {
+    border-bottom: 0px;
+    padding-bottom: 0px;
   }
 
   .ser-appto-child .ser-appto-item {
@@ -506,12 +524,12 @@
   }
 }
 
-@media (max-width: 346px) {
+@media (max-width: 380px) {
   .ser-appto-child .ser-appto-item .ser-appto-icon {
-    min-width: 55px;
-    min-height: 55px;
-    max-width: 55px;
-    max-height: 55px;
+    min-width: 48px;
+    min-height: 48px;
+    max-width: 48px;
+    max-height: 48px;
   }
 
   .ser-appto-child .ser-appto-item .ser-appto-icon svg {
@@ -519,6 +537,12 @@
     height: 25px;
   }
 
+  .ser-appto-child .ser-appto-item .ser-appto-icon {
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 326px) {
   .ser-appto-child .ser-appto-item .ser-appto-content h4 {
     font-size: 13px;
   }
