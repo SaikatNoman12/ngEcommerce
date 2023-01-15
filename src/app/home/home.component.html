@@ -462,7 +462,10 @@
     <!-- /----::product-card-section::----/ -->
     <div class="product-card-section">
       <!-- /----::feature-product::----/ -->
-      <div *ngIf="proFeature" class="product-cards feature-product">
+      <div
+        [class.proactive]="proFeature"
+        class="product-cards feature-product animated"
+      >
         <ng-container *ngFor="let data of [0, 1, 2, 4, 5, 6, 7, 8, 8, 10]">
           <div class="product-card">
             <div class="product-img">
@@ -509,7 +512,10 @@
       </div>
 
       <!-- /----::latest-product::----/ -->
-      <div *ngIf="proLatest" class="product-cards latest-product">
+      <div
+        [class.proactive]="proLatest"
+        class="product-cards latest-product animated"
+      >
         <ng-container *ngFor="let data of [0, 1, 2, 4, 5, 6, 7, 8, 8, 10]">
           <div class="product-card">
             <div class="product-img">
@@ -556,7 +562,10 @@
       </div>
 
       <!-- /----::latest-bestseller::----/ -->
-      <div *ngIf="proBestseller" class="product-cards bestseller-product">
+      <div
+        [class.proactive]="proBestseller"
+        class="product-cards bestseller-product animated"
+      >
         <ng-container *ngFor="let data of [0, 1, 2, 4, 5, 6, 7, 8, 8, 10]">
           <div class="product-card">
             <div class="product-img">
