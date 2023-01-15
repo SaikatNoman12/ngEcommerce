@@ -380,19 +380,16 @@
     </div>
   </div>
 
+  <!-- /----::product-banner::----/ -->
   <div class="product-banners">
     <div class="product-start">
       <!-- one -->
-      <div class="product-banner">
+      <div class="product-banner product-banner-hover-one">
         <a href="#">
-          <div class="product-banner-item">
-            <div class="product-banner-bg">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0531/1604/3454/files/490x600.jpg?v=1614293348"
-                alt="product-banner"
-              />
-            </div>
-          </div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0531/1604/3454/files/490x600.jpg?v=1614293348"
+            alt="product-banner"
+          />
         </a>
       </div>
     </div>
@@ -400,23 +397,19 @@
     <div class="product-left">
       <div class="product-left-top">
         <!-- two -->
-        <div class="product-banner">
+        <div class="product-banner product-banner-hover-one">
           <a href="#">
-            <div class="product-banner-item">
-              <div class="product-banner-bg">
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0531/1604/3454/files/1010x285.jpg?v=1614293348"
-                  alt="product-banner"
-                />
-              </div>
-            </div>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0531/1604/3454/files/1010x285.jpg?v=1614293348"
+              alt="product-banner"
+            />
           </a>
         </div>
       </div>
 
       <div class="product-left-bottom">
         <!-- three -->
-        <div class="product-banner">
+        <div class="product-banner product-banner-hover-one">
           <a href="#">
             <img
               src="https://cdn.shopify.com/s/files/1/0531/1604/3454/files/490x285-1.jpg?v=1614293348"
@@ -426,7 +419,7 @@
         </div>
 
         <!-- four -->
-        <div class="product-banner">
+        <div class="product-banner product-banner-hover-one">
           <a href="#">
             <img
               src="https://cdn.shopify.com/s/files/1/0531/1604/3454/files/490x285-2.jpg?v=1614293348"
@@ -437,6 +430,179 @@
       </div>
     </div>
   </div>
+
+  <!-- product-cardS -->
+  <section class="product-section">
+    <!-- /----::product-section-title::----/ -->
+    <div class="product-section-title">
+      <div class="product-title-heading">
+        <h3>{{ "top product" | titlecase }}</h3>
+      </div>
+      <div class="product-title-nav">
+        <ul>
+          <li>
+            <a [class.active]="proFeature" (click)="feature()">{{
+              "feature" | uppercase
+            }}</a>
+          </li>
+          <li>
+            <a [class.active]="proLatest" (click)="latest()">{{
+              "latest" | uppercase
+            }}</a>
+          </li>
+          <li>
+            <a [class.active]="proBestseller" (click)="bestseller()">{{
+              "bestseller" | uppercase
+            }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- /----::product-card-section::----/ -->
+    <div class="product-card-section">
+      <!-- /----::feature-product::----/ -->
+      <div *ngIf="proFeature" class="product-cards feature-product">
+        <ng-container *ngFor="let data of [0, 1, 2, 4, 5, 6, 7, 8, 8, 10]">
+          <div class="product-card">
+            <div class="product-img">
+              <a href="#">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/19_4b8d3aa9-a5ee-4fa3-acc5-03aff4692ec5_large.jpg?v=1611816036"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/20_38fec71e-6560-4075-8682-e4934cc45c14_large.jpg?v=1611816036"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="product-content">
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="product-info-text">
+                <p>
+                  <a href="#"
+                    >{{
+                      "Interdu et malesuada fames. Interdum et malesuada fames."
+                        .length > 26
+                        ? "Interdu et malesuada fames. Interdum et malesuada fames malesuada.".slice(
+                            0,
+                            26
+                          ) + "..."
+                        : "Interdu et malesuada fames. Interdum et malesuada fames"
+                    }}
+                  </a>
+                </p>
+                <h6>{{ "$" }}{{ "155.00" }} {{ "usd" | uppercase }}</h6>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <!-- /----::latest-product::----/ -->
+      <div *ngIf="proLatest" class="product-cards latest-product">
+        <ng-container *ngFor="let data of [0, 1, 2, 4, 5, 6, 7, 8, 8, 10]">
+          <div class="product-card">
+            <div class="product-img">
+              <a href="#">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/27_aa91e4e4-5c7c-4918-840f-c4ae3b4ccc60_large.jpg?v=1611809053"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/28_834d7902-026b-421f-9ff4-f0bcd8b0ae1e_large.jpg?v=1611809053"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="product-content">
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="product-info-text">
+                <p>
+                  <a href="#"
+                    >{{
+                      "Interdu et malesuada fames. Interdum et malesuada fames."
+                        .length > 26
+                        ? "Interdu et malesuada fames. Interdum et malesuada fames malesuada.".slice(
+                            0,
+                            26
+                          ) + "..."
+                        : "Interdu et malesuada fames. Interdum et malesuada fames"
+                    }}
+                  </a>
+                </p>
+                <h6>{{ "$" }}{{ "155.00" }} {{ "usd" | uppercase }}</h6>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <!-- /----::latest-bestseller::----/ -->
+      <div *ngIf="proBestseller" class="product-cards bestseller-product">
+        <ng-container *ngFor="let data of [0, 1, 2, 4, 5, 6, 7, 8, 8, 10]">
+          <div class="product-card">
+            <div class="product-img">
+              <a href="#">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/7_large.jpg?v=1611752756"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/8_large.jpg?v=1611752756"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="product-content">
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="product-info-text">
+                <p>
+                  <a href="#"
+                    >{{
+                      "Interdu et malesuada fames. Interdum et malesuada fames."
+                        .length > 26
+                        ? "Interdu et malesuada fames. Interdum et malesuada fames malesuada.".slice(
+                            0,
+                            26
+                          ) + "..."
+                        : "Interdu et malesuada fames. Interdum et malesuada fames"
+                    }}
+                  </a>
+                </p>
+                <h6>{{ "$" }}{{ "155.00" }} {{ "usd" | uppercase }}</h6>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
 
   <br />
   <br />

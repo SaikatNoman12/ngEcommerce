@@ -552,6 +552,7 @@
   }
 }
 
+/* /-----::PRODUCTS-BANNER::-----/ */
 .product-banners {
   min-width: 1400px;
   max-width: 100%;
@@ -563,7 +564,6 @@
 }
 
 .product-banners .product-start .product-banner {
-  // height: 600px;
   width: 100%;
   border-radius: 4px;
   overflow: hidden;
@@ -608,50 +608,6 @@
 
 .product-banners .product-banner {
   position: relative;
-}
-
-.product-banners .product-banner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  transition: all 0.7s;
-  opacity: 1;
-  transform: translate(-105%);
-  border-right-width: 1px;
-  border-right-style: solid;
-  border-right-color: #ffffffab;
-  background-color: #ffffffab;
-}
-
-.product-banners .product-banner::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  transition: all 1s;
-  opacity: 1;
-  transform: translate(-105%);
-  border-right-width: 1px;
-  border-right-style: solid;
-  border-right-color: #ffffffab;
-  background-color: #ffffffab;
-}
-
-.product-banners .product-banner:hover::before {
-  transform: translate(-0%);
-  opacity: 0;
-}
-
-.product-banners .product-banner:hover::after {
-  transform: translate(-0%);
-  opacity: 0;
 }
 
 @media (max-width: 1450px) {
@@ -972,17 +928,14 @@
 @media (max-width: 694px) {
   .product-banners .product-left {
     .product-left-bottom .product-banner {
-      // min-width: 680px;
       width: 100%;
     }
 
     .product-left-bottom .product-banner a {
-      // min-width: 680px;
       width: 100%;
     }
 
     .product-left-bottom .product-banner a img {
-      // min-width: 680px;
       width: 100%;
     }
   }
@@ -991,19 +944,16 @@
 @media (max-width: 678px) {
   .product-banners .product-left {
     .product-left-bottom .product-banner {
-      // min-width: 600px;
       width: 100%;
       height: 360px;
     }
 
     .product-left-bottom .product-banner a {
-      // min-width: 600px;
       width: 100%;
       height: 360px;
     }
 
     .product-left-bottom .product-banner a img {
-      // min-width: 600px;
       width: 100%;
       height: 360px;
     }
@@ -1013,19 +963,16 @@
 @media (max-width: 622px) {
   .product-banners .product-left {
     .product-left-bottom .product-banner {
-      // min-width: 600px;
       width: 100%;
       height: 330px;
     }
 
     .product-left-bottom .product-banner a {
-      // min-width: 600px;
       width: 100%;
       height: 330px;
     }
 
     .product-left-bottom .product-banner a img {
-      // min-width: 600px;
       width: 100%;
       height: 330px;
     }
@@ -1035,19 +982,16 @@
 @media (max-width: 572px) {
   .product-banners .product-left {
     .product-left-bottom .product-banner {
-      // min-width: 600px;
       width: 100%;
       height: 290px;
     }
     .product-left-top .product-banner a,
     .product-left-bottom .product-banner a {
-      // min-width: 600px;
       width: 100%;
       height: 290px;
     }
 
     .product-left-bottom .product-banner a img {
-      // min-width: 600px;
       width: 100%;
       height: 290px;
     }
@@ -1077,19 +1021,16 @@
     }
 
     .product-left-bottom .product-banner {
-      // min-width: 600px;
       width: 100%;
       height: 230px;
     }
 
     .product-left-bottom .product-banner a {
-      // min-width: 600px;
       width: 100%;
       height: 230px;
     }
 
     .product-left-bottom .product-banner a img {
-      // min-width: 600px;
       width: 100%;
       height: 230px;
     }
@@ -1113,19 +1054,16 @@
 
   .product-banners .product-left {
     .product-left-bottom .product-banner {
-      // min-width: 600px;
       width: 100%;
       height: 200px;
     }
 
     .product-left-bottom .product-banner a {
-      // min-width: 600px;
       width: 100%;
       height: 200px;
     }
 
     .product-left-bottom .product-banner a img {
-      // min-width: 600px;
       width: 100%;
       height: 200px;
     }
@@ -1149,21 +1087,137 @@
 
   .product-banners .product-left {
     .product-left-bottom .product-banner {
-      // min-width: 600px;
       width: 100%;
       height: 170px;
     }
 
     .product-left-bottom .product-banner a {
-      // min-width: 600px;
       width: 100%;
       height: 170px;
     }
 
     .product-left-bottom .product-banner a img {
-      // min-width: 600px;
       width: 100%;
       height: 170px;
     }
   }
+}
+
+/* /-----::PRODUCT-SECTION::-----/ */
+.product-section {
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+
+.product-section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid $color-smooth-black;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.product-title-heading h3 {
+  color: $color-black;
+  font-size: 26px;
+  font-weight: 600;
+  position: relative;
+  line-height: 1.5;
+}
+
+.product-title-heading h3::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: $color-red-crimson;
+}
+
+.product-title-nav ul {
+  display: flex;
+  align-items: center;
+}
+.product-title-nav ul li,
+.product-title-nav ul li a {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.product-title-nav ul li {
+  margin-right: 25px;
+}
+
+.product-title-nav ul li:last-child {
+  margin-right: 0px;
+}
+
+.product-title-nav ul li a {
+  font-size: 18px;
+  color: $color-black;
+  font-weight: 500;
+  transition: 500ms;
+}
+
+.product-title-nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  background-color: $color-red-crimson;
+  transition: 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.product-title-nav ul li a:hover {
+  color: $color-red-crimson;
+  position: relative;
+}
+
+.product-title-nav ul li a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  background-color: $color-red-crimson;
+  visibility: visible;
+  opacity: 1;
+}
+
+.product-title-nav ul li a.active {
+  color: $color-red-crimson;
+  position: relative;
+}
+
+.product-title-nav ul li a.active::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  background-color: $color-red-crimson;
+  visibility: visible;
+  opacity: 1;
+}
+
+.product-card-section {
+  width: 100%;
+  height: auto;
+}
+
+.product-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
 }
