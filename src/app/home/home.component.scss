@@ -1124,14 +1124,13 @@
   font-size: 26px;
   font-weight: 600;
   position: relative;
-  line-height: 1.5;
 }
 
 .product-title-heading h3::after {
   content: "";
   position: absolute;
   left: 0px;
-  bottom: -2px;
+  bottom: -4px;
   width: 100%;
   height: 2px;
   background-color: $color-red-crimson;
@@ -1161,13 +1160,14 @@
   color: $color-black;
   font-weight: 500;
   transition: 500ms;
+  padding: 4px 0px;
 }
 
 .product-title-nav ul li a::after {
   content: "";
   position: absolute;
   left: 0px;
-  bottom: -8px;
+  bottom: -2px;
   width: 100%;
   height: 2px;
   background-color: $color-red-crimson;
@@ -1185,7 +1185,7 @@
   content: "";
   position: absolute;
   left: 0px;
-  bottom: -8px;
+  bottom: -2px;
   width: 100%;
   height: 2px;
   background-color: $color-red-crimson;
@@ -1202,7 +1202,7 @@
   content: "";
   position: absolute;
   left: 0px;
-  bottom: -8px;
+  bottom: -2px;
   width: 100%;
   height: 2px;
   background-color: $color-red-crimson;
@@ -1213,11 +1213,52 @@
 .product-card-section {
   width: 100%;
   height: auto;
+  position: relative;
 }
 
-.product-cards {
+.feature-product {
+  display: none;
+}
+
+.latest-product {
+  display: none;
+}
+
+.bestseller-product {
+  display: none;
+}
+
+.feature-product.proactive {
+  display: block;
+}
+
+.latest-product.proactive {
+  display: block;
+}
+
+.bestseller-product.proactive {
+  display: block;
+}
+
+.product-cards.proactive {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: onnFF;
+}
+
+@keyframes onnFF {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
 }
