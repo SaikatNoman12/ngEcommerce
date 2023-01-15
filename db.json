@@ -15,15 +15,6 @@
   ],
   "products": [
     {
-      "productName": "HP Laptop",
-      "productPrice": "121000",
-      "productColor": "Black, Silver, Gold",
-      "productCategory": "Computer, Laptop",
-      "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuu5nkW1B26GEVBWUH55e7z4ys46p6hQ8vsw&usqp=CAU",
-      "productDescription": "This computer is use for coding.  And use for office working. This is you for only professinals.",
-      "id": 1
-    },
-    {
       "productName": "I Phone 14",
       "productPrice": "120000",
       "productColor": "Gold",
