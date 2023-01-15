@@ -1280,3 +1280,84 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+/* /-----::OFFER-TEXT::-----/ */
+.offer-text {
+  background-image: url("https://cdn.shopify.com/s/files/1/0531/1604/3454/t/2/assets/offer-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
+  padding: 45px 10px;
+  border-radius: 4px;
+  margin-top: 40px;
+  text-align: center;
+  height: auto;
+}
+
+.offer-text h1 {
+  font-size: 40px;
+  font-weight: 500;
+  color: $color-black;
+  margin-bottom: 25px;
+  margin-top: 0px;
+}
+
+.offer-text p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #47433c;
+}
+
+@media (max-width: 992px) {
+  .offer-text h1 {
+    font-size: 35px;
+  }
+
+  .offer-text p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 676px) {
+  .offer-text h1 {
+    font-size: 28px;
+  }
+
+  .offer-text p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 492px) {
+  .offer-text {
+    margin-top: 30px;
+    padding: 25px 10px;
+  }
+
+  .offer-text h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .offer-text p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 392px) {
+  .offer-text h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .offer-text p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 376px) {
+  .offer-text h1 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+}

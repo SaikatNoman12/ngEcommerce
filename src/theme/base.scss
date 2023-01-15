@@ -274,7 +274,6 @@ ul {
   font-weight: 400;
   font-size: 17px;
   transition: all 300ms;
-  
 }
 
 .product-info-text p a:hover {
@@ -285,6 +284,16 @@ ul {
   color: $color-black;
   font-weight: 600;
   font-size: 18px;
+}
+
+@media (max-width: 340px) {
+  .product-card .product-img {
+    height: 230px;
+  }
+
+  .product-card .product-img a {
+    height: 230px;
+  }
 }
 
 /* /-----::PRODUCT-CARD-END::-----/ */
