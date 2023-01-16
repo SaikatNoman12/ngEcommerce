@@ -1104,111 +1104,6 @@
 }
 
 /* /-----::PRODUCT-SECTION::-----/ */
-.product-section {
-  width: 100%;
-  height: auto;
-  margin-top: 30px;
-}
-
-.product-section-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid $color-smooth-black;
-  position: relative;
-  margin-bottom: 30px;
-}
-
-.product-title-heading h3 {
-  color: $color-black;
-  font-size: 26px;
-  font-weight: 600;
-  position: relative;
-}
-
-.product-title-heading h3::after {
-  content: "";
-  position: absolute;
-  left: 0px;
-  bottom: -4px;
-  width: 100%;
-  height: 2px;
-  background-color: $color-red-crimson;
-}
-
-.product-title-nav ul {
-  display: flex;
-  align-items: center;
-}
-.product-title-nav ul li,
-.product-title-nav ul li a {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.product-title-nav ul li {
-  margin-right: 25px;
-}
-
-.product-title-nav ul li:last-child {
-  margin-right: 0px;
-}
-
-.product-title-nav ul li a {
-  font-size: 18px;
-  color: $color-black;
-  font-weight: 500;
-  transition: 500ms;
-  padding: 4px 0px;
-}
-
-.product-title-nav ul li a::after {
-  content: "";
-  position: absolute;
-  left: 0px;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: $color-red-crimson;
-  transition: 500ms;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.product-title-nav ul li a:hover {
-  color: $color-red-crimson;
-  position: relative;
-}
-
-.product-title-nav ul li a:hover::after {
-  content: "";
-  position: absolute;
-  left: 0px;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: $color-red-crimson;
-  visibility: visible;
-  opacity: 1;
-}
-
-.product-title-nav ul li a.active {
-  color: $color-red-crimson;
-  position: relative;
-}
-
-.product-title-nav ul li a.active::after {
-  content: "";
-  position: absolute;
-  left: 0px;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: $color-red-crimson;
-  visibility: visible;
-  opacity: 1;
-}
 
 .product-card-section {
   width: 100%;
@@ -1359,5 +1254,147 @@
   .offer-text h1 {
     font-size: 18px;
     margin-bottom: 16px;
+  }
+}
+
+/* /-----::TOP-CATEGORIES::-----/ */
+.top-categories {
+  display: grid;
+  grid-template-columns: 1.7fr 4fr;
+  margin-top: 40px;
+  height: auto;
+  grid-column-gap: 30px;
+}
+
+.category-latest-big-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+}
+
+.category-latest-big-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.top-categories-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 25px;
+}
+
+@media (max-width: 1482px) {
+  .top-categories {
+    grid-template-columns: 1.8fr 4fr;
+  }
+
+  .categories-card-img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 1376px) {
+  .top-categories {
+    grid-template-columns: 1.7fr 4fr;
+  }
+
+  .categories-card-img {
+    height: 140px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .top-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .category-latest-big-img {
+    display: none;
+  }
+
+  .top-categories-cards {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 1056px) {
+  .top-categories-cards {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .categories-card-img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 938px) {
+  .top-categories-cards {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .categories-card-img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 900px) {
+  .top-categories-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 740px) {
+  .top-categories-cards {
+    grid-gap: 18px;
+  }
+
+  .categories-card-img {
+    height: 140px;
+  }
+}
+
+@media (max-width: 694px) {
+  .top-categories-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .categories-card-img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 688px) {
+  .categories-card-img {
+    height: 170px;
+  }
+}
+
+@media (max-width: 588px) {
+  .categories-card-img {
+    height: 130px;
+  }
+}
+
+@media (max-width: 474px) {
+  .top-categories-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .categories-card-img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 398px) {
+  .categories-card-img {
+    height: 140px;
+  }
+}
+
+@media (max-width: 340px) {
+  .categories-card-img {
+    height: 120px;
   }
 }

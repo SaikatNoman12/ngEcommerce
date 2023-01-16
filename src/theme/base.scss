@@ -189,6 +189,115 @@ ul {
   padding: 0px;
 }
 
+/* /-----::PRODUCT-TITLE-START::-----/ */
+.product-section {
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+
+.product-section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid $color-smooth-black;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.product-title-heading h3 {
+  color: $color-black;
+  font-size: 26px;
+  font-weight: 600;
+  position: relative;
+  padding: 4px 0px;
+}
+
+.product-title-heading h3::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: $color-red-crimson;
+}
+
+.product-title-nav ul {
+  display: flex;
+  align-items: center;
+}
+.product-title-nav ul li,
+.product-title-nav ul li a {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.product-title-nav ul li {
+  margin-right: 25px;
+}
+
+.product-title-nav ul li:last-child {
+  margin-right: 0px;
+}
+
+.product-title-nav ul li a {
+  font-size: 18px;
+  color: $color-black;
+  font-weight: 500;
+  transition: 500ms;
+  padding: 6px 0px;
+}
+
+.product-title-nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: $color-red-crimson;
+  transition: 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.product-title-nav ul li a:hover {
+  color: $color-red-crimson;
+  position: relative;
+}
+
+.product-title-nav ul li a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: $color-red-crimson;
+  visibility: visible;
+  opacity: 1;
+}
+
+.product-title-nav ul li a.active {
+  color: $color-red-crimson;
+  position: relative;
+}
+
+.product-title-nav ul li a.active::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: $color-red-crimson;
+  visibility: visible;
+  opacity: 1;
+}
+/* /-----::PRODUCT-TITLE-END::-----/ */
+
 /* /-----::PRODUCT-CARD-START::-----/ */
 .product-card {
   width: 100%;
@@ -243,6 +352,53 @@ ul {
   opacity: 1;
 }
 
+.product-card-watch-list {
+  display: inline;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.product-card-watch-list-child {
+  display: flex;
+  align-items: center;
+}
+
+.product-card:hover .product-card-watch-list {
+  opacity: 1;
+  visibility: visible;
+}
+
+.product-card-watch-list .product-card-watch-list-child a {
+  vertical-align: middle;
+  background: #f5f5f5;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 5px;
+  padding: 7px 0;
+  transition: 0.3s ease;
+  text-align: center;
+  cursor: cell;
+  margin-right: 8px;
+}
+
+.product-card-watch-list .product-card-watch-list-child a:last-child {
+  margin-right: 0px;
+}
+
+.product-card-watch-list .product-card-watch-list-child a:hover {
+  background-color: $color-red-crimson;
+  fill: $color-white;
+}
+
+.product-card-watch-list .product-card-watch-list-child a svg {
+  height: 20px;
+}
+
 .product-content {
   padding: 0px 8px 12px;
 }
@@ -286,6 +442,24 @@ ul {
   font-size: 18px;
 }
 
+@media (max-width: 992px) {
+  .product-card-watch-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 0px;
+    position: inherit;
+    top: inherit;
+    left: 50%;
+    transform: translateX(inherit);
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+    background-color: transparent;
+  }
+}
+
 @media (max-width: 340px) {
   .product-card .product-img {
     height: 230px;
@@ -295,5 +469,34 @@ ul {
     height: 230px;
   }
 }
-
 /* /-----::PRODUCT-CARD-END::-----/ */
+
+/* /-----::SHORT-CARD-CARD-START::-----/ */
+.short-card {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.categories-card-img {
+  height: 170px;
+}
+
+.categories-card-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.categories-card-info {
+  border-top: 1px solid $color-light-2;
+  padding: 8px 0px;
+  text-align: center;
+}
+
+.categories-card-info h5 {
+  letter-spacing: 0.2px;
+  font-size: 16px;
+}
+/* /-----::SHORT-CARD-CARD-END::-----/ */
