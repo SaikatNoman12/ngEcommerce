@@ -1553,3 +1553,34 @@
     height: 240px;
   }
 }
+
+/* /-----::SUMMER-COLLECTION::-----/ */
+.summer-collection {
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: red;
+}
+
+.summer-collection a {
+  width: 100%;
+}
+
+.summer-collection a img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .summer-collection {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .summer-collection {
+    margin-top: 20px;
+  }
+}
