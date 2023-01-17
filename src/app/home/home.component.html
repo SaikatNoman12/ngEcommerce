@@ -813,19 +813,19 @@
                   </svg>
                 </a>
 
-                <a href="#">
-                  <svg
-                    aria-hidden="true"
-                    focusable="false"
-                    role="presentation"
-                    class="icon iconwish"
-                    viewBox="0 0 176.104 176.104"
-                  >
+                <a (click)="onReactProduct(data)">
+                  <svg *ngIf="reactPro" viewBox="0 0 176.104 176.104">
                     <path
                       d="M150.383,18.301c-7.13-3.928-15.308-6.187-24.033-6.187c-15.394,0-29.18,7.015-38.283,18.015
                         c-9.146-11-22.919-18.015-38.334-18.015c-8.704,0-16.867,2.259-24.013,6.187C10.388,26.792,0,43.117,0,61.878
                         C0,67.249,0.874,72.4,2.457,77.219c8.537,38.374,85.61,86.771,85.61,86.771s77.022-48.396,85.571-86.771
                         c1.583-4.819,2.466-9.977,2.466-15.341C176.104,43.124,165.716,26.804,150.383,18.301z"
+                    ></path>
+                  </svg>
+
+                  <svg *ngIf="!reactPro" class="icon" viewBox="0 0 129 129">
+                    <path
+                      d="m121.6,40.1c-3.3-16.6-15.1-27.3-30.3-27.3-8.5,0-17.7,3.5-26.7,10.1-9.1-6.8-18.3-10.3-26.9-10.3-15.2,0-27.1,10.8-30.3,27.6-4.8,24.9 10.6,58 55.7,76 0.5,0.2 1,0.3 1.5,0.3 0.5,0 1-0.1 1.5-0.3 45-18.4 60.3-51.4 55.5-76.1zm-57,67.9c-39.6-16.4-53.3-45-49.2-66.3 2.4-12.7 11.2-21 22.3-21 7.5,0 15.9,3.6 24.3,10.5 1.5,1.2 3.6,1.2 5.1,0 8.4-6.7 16.7-10.2 24.2-10.2 11.1,0 19.8,8.1 22.3,20.7 4.1,21.1-9.5,49.6-49,66.3z"
                     ></path>
                   </svg>
                 </a>
@@ -884,14 +884,152 @@
       <div class="top-categories-cards">
         <ng-container *ngFor="let data of [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]">
           <div class="short-card">
-            <div class="categories-card-img">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0531/1604/3454/collections/6_1024x1024.jpg?v=1611749419"
-                alt=""
-              />
+            <a href="fff">
+              <div class="categories-card-img">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0531/1604/3454/collections/6_1024x1024.jpg?v=1611749419"
+                  alt=""
+                />
+              </div>
+              <div class="categories-card-info">
+                <h5>{{ "Fashion" | uppercase }}</h5>
+              </div>
+            </a>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+
+  <!-- /----::day-deal-section::----/ -->
+  <section class="day-deal-sec">
+    <!-- /----::day-deal-section-title::----/ -->
+    <div class="product-section-title day-deal-sec-title">
+      <div class="product-title-heading">
+        <h3>{{ "day of the deal" | titlecase }}</h3>
+      </div>
+    </div>
+
+    <!-- /----::day-deal-cards-parent::----/ -->
+    <div class="day-deal-cards-parent">
+      <div class="day-deal-cards-child">
+        <ng-container *ngFor="let data of [0, 0]">
+          <div class="day-deal-popular-card">
+            <div class="day-deal-popular-img">
+              <a href="#">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/3_large.jpg?v=1611751838"
+                  alt="day-deal"
+                />
+              </a>
+
+              <a href="#">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/4_large.jpg?v=1611751839"
+                  alt="day-deal"
+                />
+              </a>
             </div>
-            <div class="categories-card-info">
-              <h5>{{ "Fashion" | uppercase }}</h5>
+            <div class="day-deal-popular-content">
+              <div class="day-deal-title">
+                <h3>
+                  <a href="#">{{
+                    "consectetur adipiscing elit" | titlecase
+                  }}</a>
+                </h3>
+              </div>
+              <div class="day-deal-rating">
+                <div class="day-deal-rate">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <div class="day-deal-info-text">
+                  <h6>
+                    <span>
+                      {{ "$" }}{{ "155.00" }} {{ "usd" | uppercase }}
+                    </span>
+                    <span>
+                      <del>
+                        {{ "$" }}{{ "145.00" }} {{ "usd" | uppercase }}
+                      </del>
+                    </span>
+                  </h6>
+                  <p>
+                    {{
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet necessitatibus, praesentium dolorum consequatur rerum autem qui officia aspernatur perferendis, sint inventore, assumenda nesciunt pariatur accusamus tenetur eaque distinctio enim esse."
+                        .length >= 100
+                        ? "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet necessitatibus, praesentium dolorum consequatur rerum autem qui officia aspernatur perferendis, sint inventore, assumenda nesciunt pariatur accusamus tenetur eaque distinctio enim esse.".slice(
+                            0,
+                            97
+                          ) + "..."
+                        : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet necessitatibus, praesentium dolorum consequatur rerum autem qui officia aspernatur perferendis, sint inventore, assumenda nesciunt pariatur accusamus tenetur eaque distinctio enim esse."
+                    }}
+                  </p>
+                  <hr />
+                  <h4>Hurry up! offer ends in:</h4>
+                  <div class="time-counting">
+                    <ul>
+                      <li>
+                        <span>520</span>
+                        <span>{{ "days" | titlecase }}</span>
+                      </li>
+                      <li>
+                        <span>07</span>
+                        <span>{{ "hours" | titlecase }}</span>
+                      </li>
+
+                      <li>
+                        <span>29</span>
+                        <span>{{ "mins" | titlecase }}</span>
+                      </li>
+                      <li>
+                        <span>29</span>
+                        <span>{{ "secs" | titlecase }}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="cart-eye-icon">
+                    <button type="button">
+                      {{ "Add to Cart" | uppercase }}
+                    </button>
+                    <a>
+                      <svg viewBox="0 0 176.104 176.104">
+                        <path
+                          d="M150.383,18.301c-7.13-3.928-15.308-6.187-24.033-6.187c-15.394,0-29.18,7.015-38.283,18.015
+                            c-9.146-11-22.919-18.015-38.334-18.015c-8.704,0-16.867,2.259-24.013,6.187C10.388,26.792,0,43.117,0,61.878
+                            C0,67.249,0.874,72.4,2.457,77.219c8.537,38.374,85.61,86.771,85.61,86.771s77.022-48.396,85.571-86.771
+                            c1.583-4.819,2.466-9.977,2.466-15.341C176.104,43.124,165.716,26.804,150.383,18.301z"
+                        ></path>
+                      </svg>
+
+                      <!-- <svg class="icon" viewBox="0 0 129 129">
+                        <path
+                          d="m121.6,40.1c-3.3-16.6-15.1-27.3-30.3-27.3-8.5,0-17.7,3.5-26.7,10.1-9.1-6.8-18.3-10.3-26.9-10.3-15.2,0-27.1,10.8-30.3,27.6-4.8,24.9 10.6,58 55.7,76 0.5,0.2 1,0.3 1.5,0.3 0.5,0 1-0.1 1.5-0.3 45-18.4 60.3-51.4 55.5-76.1zm-57,67.9c-39.6-16.4-53.3-45-49.2-66.3 2.4-12.7 11.2-21 22.3-21 7.5,0 15.9,3.6 24.3,10.5 1.5,1.2 3.6,1.2 5.1,0 8.4-6.7 16.7-10.2 24.2-10.2 11.1,0 19.8,8.1 22.3,20.7 4.1,21.1-9.5,49.6-49,66.3z"
+                        ></path>
+                      </svg> -->
+                    </a>
+                    <a href="#">
+                      <svg viewBox="0 0 511.999 511.999">
+                        <path
+                          d="M508.745,246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818,239.784,3.249,246.035
+                            c-4.332,5.936-4.332,13.987,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206s248.174-146.95,252.748-153.201
+                            C513.083,260.028,513.083,251.971,508.745,246.041z M255.997,385.406c-102.529,0-191.33-97.533-217.617-129.418
+                            c26.253-31.913,114.868-129.395,217.617-129.395c102.524,0,191.319,97.516,217.617,129.418
+                            C447.361,287.923,358.746,385.406,255.997,385.406z"
+                        ></path>
+                        <path
+                          d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275
+                            s101.275-45.433,101.275-101.275S311.839,154.725,255.997,154.725z M255.997,323.516c-37.23,0-67.516-30.287-67.516-67.516
+                            s30.287-67.516,67.516-67.516s67.516,30.287,67.516,67.516S293.227,323.516,255.997,323.516z"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </ng-container>

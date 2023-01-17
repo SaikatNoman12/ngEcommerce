@@ -1398,3 +1398,158 @@
     height: 120px;
   }
 }
+
+/* /-----::DAY-DEAL-SECTION::-----/ */
+.day-deal-sec {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.day-deal-cards-parent {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+}
+
+.day-deal-cards-child {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 25px;
+}
+
+@media (max-width: 1400px) {
+  .day-deal-cards-child {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .day-deal-popular-card {
+    grid-template-columns: 1.6fr 4fr;
+  }
+}
+
+@media (max-width: 1100px) {
+  .day-deal-popular-card {
+    grid-template-columns: 1.8fr 4fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .day-deal-popular-card {
+    grid-template-columns: 2fr 4fr;
+  }
+}
+
+@media (max-width: 856px) {
+  .day-deal-popular-card {
+    grid-template-columns: 2.6fr 4fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .day-deal-popular-card {
+    grid-template-columns: 3fr 4fr;
+  }
+}
+
+@media (max-width: 730px) {
+  .day-deal-cards-child {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .time-counting ul li {
+    padding: 0px 6px;
+  }
+
+  .day-deal-popular-card {
+    grid-template-columns: 1fr;
+  }
+
+  .day-deal-popular-card .day-deal-popular-img {
+    height: 280px;
+  }
+
+  .day-deal-popular-card .day-deal-popular-img a {
+    height: 280px;
+  }
+
+  .day-deal-info-text h4 {
+    font-size: 16px;
+  }
+
+  .time-counting ul li span:first-child {
+    font-size: 16px;
+  }
+
+  .time-counting ul li span:last-child {
+    font-size: 10px;
+  }
+
+  .cart-eye-icon button {
+    padding: 1px 15px 0px 15px;
+  }
+}
+
+@media (max-width: 667px) {
+  .day-deal-cards-child {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 16px;
+  }
+
+  .day-deal-popular-card .day-deal-popular-img {
+    height: 400px;
+  }
+
+  .day-deal-popular-card .day-deal-popular-img a {
+    height: 400px;
+  }
+}
+
+@media (max-width: 667px) {
+  .day-deal-popular-card .day-deal-popular-img {
+    height: 360px;
+  }
+
+  .day-deal-popular-card .day-deal-popular-img a {
+    height: 360px;
+  }
+}
+
+@media (max-width: 667px) {
+  .day-deal-sec-title h3 {
+    display: block;
+  }
+}
+
+@media (max-width: 460px) {
+  .day-deal-sec-title h3 {
+    font-size: 20px;
+  }
+
+  .day-deal-popular-card .day-deal-popular-img {
+    height: 330px;
+  }
+
+  .day-deal-popular-card .day-deal-popular-img a {
+    height: 330px;
+  }
+}
+
+@media (max-width: 388px) {
+  .day-deal-popular-card .day-deal-popular-img {
+    height: 270px;
+  }
+
+  .day-deal-popular-card .day-deal-popular-img a {
+    height: 270px;
+  }
+}
+
+@media (max-width: 334px) {
+  .day-deal-popular-card .day-deal-popular-img {
+    height: 240px;
+  }
+
+  .day-deal-popular-card .day-deal-popular-img a {
+    height: 240px;
+  }
+}

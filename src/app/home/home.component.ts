@@ -7,14 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  reactPro: boolean = false;
 
   proFeature: boolean = true;
   proLatest: boolean = false;
   proBestseller: boolean = false;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
   feature() {
     this.proLatest = false;
@@ -33,6 +35,10 @@ export class HomeComponent implements OnInit {
     this.proBestseller = true;
     this.proFeature = false;
     this.proLatest = false;
+  }
+
+  onReactProduct(data: number) {
+    this.reactPro = !this.reactPro;
   }
 
 }
