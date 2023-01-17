@@ -1555,7 +1555,7 @@
 }
 
 /* /-----::SUMMER-COLLECTION::-----/ */
-.summer-collection {
+.seasonal-collection {
   width: 100%;
   height: auto;
   margin-top: 50px;
@@ -1564,23 +1564,23 @@
   background-color: red;
 }
 
-.summer-collection a {
+.seasonal-collection a {
   width: 100%;
 }
 
-.summer-collection a img {
+.seasonal-collection a img {
   width: 100%;
   height: 100%;
 }
 
 @media (max-width: 1200px) {
-  .summer-collection {
+  .seasonal-collection {
     margin-top: 30px;
   }
 }
 
 @media (max-width: 767px) {
-  .summer-collection {
+  .seasonal-collection {
     margin-top: 20px;
   }
 }
