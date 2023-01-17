@@ -471,7 +471,7 @@ ul {
 }
 /* /-----::PRODUCT-CARD-END::-----/ */
 
-/* /-----::SHORT-CARD-CARD-START::-----/ */
+/* /-----::SHORT-CARD-START::-----/ */
 .short-card {
   width: 100%;
   height: auto;
@@ -481,7 +481,7 @@ ul {
 }
 
 .categories-card-img {
-  height: 170px;
+  height: 175px;
 }
 
 .categories-card-img img {
@@ -499,4 +499,198 @@ ul {
   letter-spacing: 0.2px;
   font-size: 16px;
 }
-/* /-----::SHORT-CARD-CARD-END::-----/ */
+/* /-----::SHORT-CARD-END::-----/ */
+
+/* /-----::DAY-DEAL-POPULAR-CARD-START::-----/ */
+.day-deal-popular-card {
+  display: grid;
+  grid-template-columns: 2.8fr 4fr;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+  height: 100%;
+}
+
+.day-deal-popular-card .day-deal-popular-img {
+  position: relative;
+  width: 100%;
+  height: 312px;
+  transition: 500ms;
+  background-color: transparent;
+}
+
+.day-deal-popular-card .day-deal-popular-img a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 312px;
+  transition: all 0.8s ease;
+}
+
+.day-deal-popular-card .day-deal-popular-img a:first-child {
+  visibility: visible;
+  opacity: 1;
+}
+
+.day-deal-popular-card .day-deal-popular-img a:last-child {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.day-deal-popular-card .day-deal-popular-img a img {
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.day-deal-popular-card:hover .day-deal-popular-img a:first-child {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.day-deal-popular-card:hover .day-deal-popular-img a:last-child {
+  visibility: visible;
+  opacity: 1;
+}
+
+.day-deal-popular-content {
+  padding: 16px 6px 12px 6px;
+}
+
+.day-deal-popular-content .day-deal-title h3 a {
+  font-size: 18px;
+  font-weight: 400;
+  color: $color-black;
+  transition: 300ms;
+  padding: 4px 0px 3px;
+}
+
+.day-deal-popular-content .day-deal-title h3 a:hover {
+  color: $color-red-crimson;
+}
+
+.day-deal-popular-content .day-deal-rating .day-deal-rate {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 12px 0px;
+}
+
+.day-deal-popular-content .day-deal-rating .day-deal-rate i {
+  font-size: 14px;
+  color: $star-color;
+  margin: 0px 1px;
+}
+
+.day-deal-info-text h6 {
+  margin-bottom: 6px;
+}
+
+.day-deal-info-text span {
+  font-size: 16px;
+  font-weight: 600;
+  color: $color-black;
+}
+
+.day-deal-info-text span:last-child {
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-light-gray-2;
+  margin-left: 4px;
+}
+
+.day-deal-info-text p {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 400;
+  color: $color-black-2;
+}
+
+.day-deal-info-text h4 {
+  font-size: 20px;
+  color: gray;
+  margin-bottom: 12px;
+}
+
+.time-counting {
+  margin-bottom: 16px;
+}
+
+.time-counting ul {
+  display: flex;
+}
+
+.time-counting ul li {
+  padding: 0px 16px;
+  border-right: 1px solid $color-light-gray-3;
+}
+
+.time-counting ul li:first-child {
+  padding-left: 0px;
+}
+
+.time-counting ul li:last-child {
+  padding-right: 0px;
+  border-right: 0px;
+}
+
+.time-counting ul li span:first-child {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.time-counting ul li span:last-child {
+  font-size: 12px;
+}
+
+.cart-eye-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cart-eye-icon button {
+  outline: 0px;
+  border: 0px;
+  background-color: #fc404a;
+  padding: 2px 15px 0px 15px;
+  min-height: 40px;
+  max-height: 40px;
+  color: #f8f8f8;
+  transition: all 300ms ease-in-out;
+  border-radius: 4px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-eye-icon button:hover {
+  background-color: $color-black-2;
+}
+
+.cart-eye-icon a {
+  vertical-align: middle;
+  background: #f5f5f5;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 5px;
+  padding: 8px 0 7px 0px;
+  transition: 0.3s ease;
+  text-align: center;
+  cursor: cell;
+  margin-left: 12px;
+}
+
+.cart-eye-icon a svg {
+  height: 20px;
+}
+
+.cart-eye-icon a:hover {
+  background-color: $color-red-crimson;
+  fill: $color-white;
+}
+/* /-----::DAY-DEAL-POPULAR-CARD-END::-----/ */
