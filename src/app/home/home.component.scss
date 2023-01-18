@@ -1739,3 +1739,69 @@
     grid-template-columns: 2.2fr 4fr;
   }
 }
+
+.company-logo {
+  width: 100%;
+  height: auto;
+
+  margin-top: 60px;
+  border: 1px solid #e1e1e1;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.company-logo-images {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  display: flex;
+  padding: 0px !important;
+}
+
+.company-logo-image {
+  min-width: 188px;
+  max-width: 188px;
+  min-height: 126px;
+  max-height: 126px;
+  margin: 0px 20px;
+}
+
+.company-logo-image a:hover img {
+  fill: adjust-hue($color: #000000, $degrees: 0);
+}
+
+.company-logo-image:first-child {
+  margin-left: 0px;
+  padding: 0px;
+  height: 0px;
+}
+
+.company-logo-image:last-child {
+  margin-right: 0px;
+  padding: 0px;
+  height: 0px;
+}
+
+.company-logo-images::-webkit-scrollbar {
+  width: 0px;
+  padding: 0px;
+  height: 0px;
+}
+
+.company-logo-images::-webkit-scrollbar-track {
+  background: transparent;
+  padding: 0px;
+  height: 0px;
+}
+
+.company-logo-images::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 0px;
+  height: 0px;
+}
+
+@media (max-width: 772px) {
+  .company-logo {
+    margin-top: 30px;
+  }
+}
