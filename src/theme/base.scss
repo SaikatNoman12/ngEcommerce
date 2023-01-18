@@ -740,5 +740,96 @@ ul {
 .popular-product-big-img img {
   height: 100%;
 }
-
 /* /-----::POPULAR-PRODUCTS-CARD-END::-----/ */
+
+/* /-----::LATEST-BLOG-CARD-START::-----/ */
+.latest-blog-card {
+  width: 100%;
+  height: 100%;
+}
+
+.latest-blog-bg {
+  height: 252px;
+  width: 100%;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.latest-blog-bg img {
+  height: 100%;
+  width: 100%;
+}
+
+.latest-blog-content {
+  width: 100%;
+  height: auto;
+}
+
+.latest-blog-content-title h3,
+.latest-blog-content-title h6 {
+  margin-bottom: 10px;
+}
+
+.latest-blog-content-title h3 a {
+  font-size: 20px;
+  padding: 0;
+  font-weight: 500;
+  transition: 0.3s ease;
+  margin: 0;
+}
+
+.latest-blog-content-title h3 a:hover {
+  color: $color-red-crimson;
+}
+
+.latest-blog-content-title h6 span {
+  font-size: 14px;
+  font-weight: 400;
+  color: $color-black;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+.latest-blog-content-title h6 span:first-child::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #fc404a;
+  vertical-align: middle;
+  position: relative;
+  top: 1px;
+  margin: 0 14px;
+}
+
+.latest-blog-content-title h6 span:last-child {
+  font-size: 14px;
+  font-weight: 400;
+  color: $color-light-gray-2;
+}
+
+.latest-blog-content-title p {
+  font-size: 13px;
+  font-weight: 400;
+  color: $color-light-gray;
+  letter-spacing: 1px;
+}
+
+.latest-blog-content-title h5 a {
+  margin-top: 8px;
+  color: $color-black;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-bottom: 1px solid $color-black;
+  transition: 300ms;
+  display: inline-block !important;
+}
+
+.latest-blog-content-title a:hover {
+  color: $color-red-crimson;
+  border-bottom: 1px solid $color-red-crimson;
+}
+/* /-----::LATEST-BLOG-CARD-END::-----/ */

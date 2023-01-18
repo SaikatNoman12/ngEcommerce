@@ -1220,6 +1220,68 @@
     </div>
   </section>
 
+  <!-- /----::latest-blog::----/ -->
+  <section class="latest-blog">
+    <!-- /----::latest-blog-title::----/ -->
+    <div class="product-section-title day-deal-sec-title">
+      <div class="product-title-heading">
+        <h3>{{ "latest- blog" | titlecase }}</h3>
+      </div>
+    </div>
+
+    <!-- /----::latest-blog-cards::----/ -->
+    <div class="latest-blog-cards">
+      <ng-container *ngFor="let data of [0, 0, 0]">
+        <div class="latest-blog-card">
+          <div class="latest-blog-bg">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0531/1604/3454/articles/1_grande.jpg?v=1611815082"
+              alt="latest-blog"
+            />
+          </div>
+
+          <div class="latest-blog-content">
+            <div class="latest-blog-content-title">
+              <h3>
+                <a href="#">
+                  {{
+                    "Nam congue, ipsum sed mollis pharetra".length >= 40
+                      ? "Nam congue, ipsum sed mollis pharetra".slice(0, 35) +
+                        "..."
+                      : ("Nam congue, ipsum sed mollis pharetra" | titlecase)
+                  }}
+                </a>
+              </h3>
+
+              <h6>
+                <span>Winter Infotech</span>
+                <span>18 Nov, 2022</span>
+              </h6>
+
+              <p>
+                {{
+                  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius consequatur inventore adipisci accusantium rem enim qui, nisi modi incidunt labore iure error fugit, alias aliquam illum minus earum neque! Tenetur."
+                    .length >= 100
+                    ? "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius consequatur inventore adipisci accusantium rem enim qui, nisi modi incidunt labore iure error fugit, alias aliquam illum minus earum neque! Tenetur.".slice(
+                        0,
+                        97
+                      ) + "..."
+                    : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius consequatur inventore adipisci accusantium rem enim qui, nisi modi incidunt labore iure error fugit, alias aliquam illum minus earum neque! Tenetur."
+                }}
+              </p>
+
+              <h5>
+                <a href="#">
+                  {{ "Read more" | titlecase }}
+                </a>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </section>
+
   <br />
   <br />
   <br />
