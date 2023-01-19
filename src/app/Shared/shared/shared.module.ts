@@ -10,7 +10,7 @@ import { TruthyFalsyService } from './../../services/truthy-falsy.service';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   providers: [
     TruthyFalsyService,
