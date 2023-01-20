@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  
+
   copyrightYear: any = new Date().getFullYear();
 
   constructor() { }
@@ -14,5 +14,26 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  contactUs: boolean = false;
+  category: boolean = false;
+  service: boolean = false;
+  extras: boolean = false;
+
+
+  onContactUs() {
+    this.contactUs = !this.contactUs;
+  }
+
+  onCategory() {
+    this.category = !this.category;
+  }
+
+  onService() {
+    this.service = !this.service;
+  }
+
+  onExtras() {
+    this.extras = !this.extras;
+  }
 
 }

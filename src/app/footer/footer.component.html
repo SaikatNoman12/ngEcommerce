@@ -6,8 +6,18 @@
       <div class="footer-top-main">
         <!-- /-----::footer-top-child::-----/ -->
         <div class="footer-top-child">
-          <h4>{{ "contact us" | uppercase }}</h4>
-          <div class="footer-top-child-to-child">
+          <div (click)="onContactUs()" class="footer-top-child-to-child-top">
+            <h4>{{ "contact us" | uppercase }}</h4>
+            <button type="button">
+              <i *ngIf="!contactUs" class="fas fa-plus"></i>
+              <i *ngIf="contactUs" class="fas fa-minus"></i>
+            </button>
+          </div>
+
+          <div
+            [class.onFootAnimate]="contactUs"
+            class="footer-top-child-to-child"
+          >
             <div class="footer-top-child-top">
               <p>
                 <span>
@@ -146,8 +156,18 @@
 
         <!-- /-----::footer-top-child::-----/ -->
         <div class="footer-top-child footer-top-child-items">
-          <h4>{{ "CATEGORY" | uppercase }}</h4>
-          <div class="footer-top-child-to-child">
+          <div (click)="onCategory()" class="footer-top-child-to-child-top">
+            <h4>{{ "CATEGORY" | uppercase }}</h4>
+            <button type="button">
+              <i *ngIf="!category" class="fas fa-plus"></i>
+              <i *ngIf="category" class="fas fa-minus"></i>
+            </button>
+          </div>
+
+          <div
+            [class.onFootAnimate2]="category"
+            class="footer-top-child-to-child"
+          >
             <ul>
               <li>
                 <a href="#">
@@ -194,10 +214,19 @@
 
         <!-- /-----::footer-top-child::-----/ -->
         <div class="footer-top-child footer-top-child-items">
-          <h4>
-            {{ "SERVICE" | uppercase }}
-          </h4>
-          <div class="footer-top-child-to-child">
+          <div (click)="onService()" class="footer-top-child-to-child-top">
+            <h4>
+              {{ "SERVICE" | uppercase }}
+            </h4>
+            <button type="button">
+              <i *ngIf="!service" class="fas fa-plus"></i>
+              <i *ngIf="service" class="fas fa-minus"></i>
+            </button>
+          </div>
+          <div
+            [class.onFootAnimate2]="service"
+            class="footer-top-child-to-child"
+          >
             <ul>
               <li>
                 <a href="#">
@@ -240,10 +269,19 @@
 
         <!-- /-----::footer-top-child::-----/ -->
         <div class="footer-top-child footer-top-child-items">
-          <h4>
-            {{ "EXTRAS" | uppercase }}
-          </h4>
-          <div class="footer-top-child-to-child">
+          <div (click)="onExtras()" class="footer-top-child-to-child-top">
+            <h4>
+              {{ "EXTRAS" | uppercase }}
+            </h4>
+            <button type="button">
+              <i *ngIf="!extras" class="fas fa-plus"></i>
+              <i *ngIf="extras" class="fas fa-minus"></i>
+            </button>
+          </div>
+          <div
+            [class.onFootAnimate2]="extras"
+            class="footer-top-child-to-child"
+          >
             <ul>
               <li>
                 <a href="#">
