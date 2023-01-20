@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HeaderModule,
     HttpClientModule,
-    FooterModule
+    FooterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

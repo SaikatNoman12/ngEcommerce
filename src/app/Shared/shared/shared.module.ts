@@ -16,7 +16,7 @@ import { TruthyFalsyService } from './../../services/truthy-falsy.service';
     TruthyFalsyService,
     SellerService,
     NumberValidateService,
-    SellerAddProductService
+    SellerAddProductService,
   ]
 })
 export class SharedModule { }

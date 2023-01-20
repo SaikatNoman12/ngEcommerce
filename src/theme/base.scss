@@ -442,6 +442,26 @@ ul {
   font-size: 18px;
 }
 
+.sold-out {
+  display: inline;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+.sold-out a {
+  display: inline;
+}
+
+.sold-out span {
+  background-color: $color-red-crimson;
+  color: $color-white;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 2px 4px;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+}
+
 @media (max-width: 992px) {
   .product-card-watch-list {
     display: flex;
