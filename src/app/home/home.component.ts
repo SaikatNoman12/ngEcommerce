@@ -41,4 +41,16 @@ export class HomeComponent implements OnInit {
     this.reactPro = !this.reactPro;
   }
 
+
+  dayDeal: any = [
+    {
+      _id: 1,
+      endDate: 'jan 19 2024 23:59:59'
+    },
+    {
+      _id: 2,
+      endDate: 'Jan 20 2025 23:59:59'
+    }
+  ]
+
 }

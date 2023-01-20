@@ -588,6 +588,14 @@
                 </a>
               </div>
             </div>
+
+            <div class="sold-out">
+              <a href="#">
+                <span>
+                  {{ "sold out" | uppercase }}
+                </span>
+              </a>
+            </div>
           </div>
         </ng-container>
       </div>
@@ -913,7 +921,7 @@
     <!-- /----::day-deal-cards-parent::----/ -->
     <div class="day-deal-cards-parent">
       <div class="day-deal-cards-child">
-        <ng-container *ngFor="let data of [0, 0]">
+        <ng-container *ngFor="let data of dayDeal">
           <div class="day-deal-popular-card">
             <div class="day-deal-popular-img">
               <a href="#">
@@ -969,28 +977,8 @@
                     }}
                   </p>
                   <hr />
-                  <h4>Hurry up! offer ends in:</h4>
-                  <div class="time-counting">
-                    <ul>
-                      <li>
-                        <span>520</span>
-                        <span>{{ "days" | titlecase }}</span>
-                      </li>
-                      <li>
-                        <span>07</span>
-                        <span>{{ "hours" | titlecase }}</span>
-                      </li>
-
-                      <li>
-                        <span>29</span>
-                        <span>{{ "mins" | titlecase }}</span>
-                      </li>
-                      <li>
-                        <span>29</span>
-                        <span>{{ "secs" | titlecase }}</span>
-                      </li>
-                    </ul>
-                  </div>
+                  <app-time-counter [endDate]="data.endDate">
+                  </app-time-counter>
                   <div class="cart-eye-icon">
                     <button type="button">
                       {{ "Add to Cart" | uppercase }}

@@ -10,8 +10,10 @@ export class AppComponent {
   title = 'eCommerce';
 
   constructor(
-    private router: Router
+    private router: Router,
   ) { }
+
+  arr: any = [];
 
   ngOnInit(): void {
 

@@ -1,0 +1,24 @@
+<ng-container *ngIf="clear === false">
+  <h4>Hurry up! offer ends in:</h4>
+  <div class="time-counting">
+    <ul>
+      <li>
+        <span>{{ days }}</span>
+        <span>{{ "day" | titlecase }}</span>
+      </li>
+      <li>
+        <span>{{ hour }}</span>
+        <span>{{ "hours" | titlecase }}</span>
+      </li>
+
+      <li>
+        <span>{{ min }}</span>
+        <span>{{ "mins" | titlecase }}</span>
+      </li>
+      <li>
+        <span>{{ sec }}</span>
+        <span>{{ "secs" | titlecase }}</span>
+      </li>
+    </ul>
+  </div>
+</ng-container>
