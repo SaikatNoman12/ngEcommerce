@@ -1,9 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+
+
+// import Swiper core and required modules
+import SwiperCore, { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
+
+// install Swiper modules
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
 
@@ -13,7 +21,8 @@ export class HomeComponent implements OnInit {
   proLatest: boolean = false;
   proBestseller: boolean = false;
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }
@@ -51,6 +60,13 @@ export class HomeComponent implements OnInit {
       _id: 2,
       endDate: 'Jan 20 2025 23:59:59'
     }
-  ]
+  ];
+
+  pagination = {
+    clickable: true,
+    renderBullet: function (index: number, className: string) {
+      return '<span class="' + className + '">' + "</span>";
+    },
+  };
 
 }
