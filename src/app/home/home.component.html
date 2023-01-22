@@ -518,9 +518,9 @@
       <swiper
         [pagination]="true"
         [loop]="false"
-        [speed]="1000"
+        [speed]="500"
         [autoplay]="{
-          delay: 1000,
+          delay: 500,
           disableOnInteraction: false
         }"
         [effect]="'fade'"
@@ -1376,9 +1376,9 @@
       <swiper
         [pagination]="true"
         [loop]="false"
-        [speed]="1000"
+        [speed]="500"
         [autoplay]="{
-          delay: 1000,
+          delay: 500,
           disableOnInteraction: false
         }"
         [effect]="'fade'"
@@ -2176,9 +2176,9 @@
       <swiper
         [pagination]="true"
         [loop]="false"
-        [speed]="1000"
+        [speed]="500"
         [autoplay]="{
-          delay: 1000,
+          delay: 500,
           disableOnInteraction: false
         }"
         [effect]="'fade'"
@@ -3000,23 +3000,139 @@
       </div>
 
       <!-- /----::product-categories-card-section::----/ -->
-      <div class="top-categories-cards">
-        <ng-container *ngFor="let data of [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]">
-          <div class="short-card">
-            <a href="fff">
-              <div class="categories-card-img">
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0531/1604/3454/collections/6_1024x1024.jpg?v=1611749419"
-                  alt=""
-                />
+
+      <swiper
+        [pagination]="true"
+        [loop]="false"
+        [speed]="500"
+        [autoplay]="{
+          delay: 500,
+          disableOnInteraction: false
+        }"
+        [effect]="'fade'"
+        [slidesPerView]="5"
+        [navigation]="true"
+        [autoplay]="false"
+        [spaceBetween]="20"
+        [class.proactive]="proBestseller"
+        class="mySwiper"
+      >
+        <ng-template swiperSlide>
+          <div class="top-categories-cards">
+            <ng-container *ngFor="let data of [0, 0]">
+              <div class="short-card">
+                <a href="fff">
+                  <div class="categories-card-img">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0531/1604/3454/collections/6_1024x1024.jpg?v=1611749419"
+                      alt=""
+                    />
+                  </div>
+                  <div class="categories-card-info">
+                    <h5>{{ "Fashion" | uppercase }}</h5>
+                  </div>
+                </a>
               </div>
-              <div class="categories-card-info">
-                <h5>{{ "Fashion" | uppercase }}</h5>
-              </div>
-            </a>
+            </ng-container>
           </div>
-        </ng-container>
-      </div>
+        </ng-template>
+        <ng-template swiperSlide>
+          <div class="top-categories-cards">
+            <ng-container *ngFor="let data of [0, 0]">
+              <div class="short-card">
+                <a href="fff">
+                  <div class="categories-card-img">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0531/1604/3454/collections/6_1024x1024.jpg?v=1611749419"
+                      alt=""
+                    />
+                  </div>
+                  <div class="categories-card-info">
+                    <h5>{{ "Fashion" | uppercase }}</h5>
+                  </div>
+                </a>
+              </div>
+            </ng-container>
+          </div>
+        </ng-template>
+        <ng-template swiperSlide>
+          <div class="top-categories-cards">
+            <ng-container *ngFor="let data of [0, 0]">
+              <div class="short-card">
+                <a href="fff">
+                  <div class="categories-card-img">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0531/1604/3454/collections/6_1024x1024.jpg?v=1611749419"
+                      alt=""
+                    />
+                  </div>
+                  <div class="categories-card-info">
+                    <h5>{{ "Fashion" | uppercase }}</h5>
+                  </div>
+                </a>
+              </div>
+            </ng-container>
+          </div>
+        </ng-template>
+        <ng-template swiperSlide>
+          <div class="top-categories-cards">
+            <ng-container *ngFor="let data of [0, 0]">
+              <div class="short-card">
+                <a href="fff">
+                  <div class="categories-card-img">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0531/1604/3454/collections/6_1024x1024.jpg?v=1611749419"
+                      alt=""
+                    />
+                  </div>
+                  <div class="categories-card-info">
+                    <h5>{{ "Fashion" | uppercase }}</h5>
+                  </div>
+                </a>
+              </div>
+            </ng-container>
+          </div>
+        </ng-template>
+        <ng-template swiperSlide>
+          <div class="top-categories-cards">
+            <ng-container *ngFor="let data of [0, 0]">
+              <div class="short-card">
+                <a href="fff">
+                  <div class="categories-card-img">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0531/1604/3454/collections/6_1024x1024.jpg?v=1611749419"
+                      alt=""
+                    />
+                  </div>
+                  <div class="categories-card-info">
+                    <h5>{{ "Fashion" | uppercase }}</h5>
+                  </div>
+                </a>
+              </div>
+            </ng-container>
+          </div>
+        </ng-template>
+        <ng-template swiperSlide>
+          <div class="top-categories-cards">
+            <ng-container *ngFor="let data of [0, 0]">
+              <div class="short-card">
+                <a href="fff">
+                  <div class="categories-card-img">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0531/1604/3454/collections/6_1024x1024.jpg?v=1611749419"
+                      alt=""
+                    />
+                  </div>
+                  <div class="categories-card-info">
+                    <h5>{{ "Fashion" | uppercase }}</h5>
+                  </div>
+                </a>
+              </div>
+            </ng-container>
+          </div>
+        </ng-template>
+        >
+      </swiper>
     </div>
   </section>
 

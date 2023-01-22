@@ -1267,10 +1267,11 @@
 /* /-----::TOP-CATEGORIES::-----/ */
 .top-categories {
   display: grid;
-  grid-template-columns: 1.7fr 4fr;
+  grid-template-columns: 440px calc(100% - 470px);
   margin-top: 40px;
   height: auto;
   grid-column-gap: 30px;
+  overflow-x: hidden;
 }
 
 .category-latest-big-img {
@@ -1286,16 +1287,20 @@
   height: 100%;
 }
 
+.top-categories-card-sec {
+  overflow-x: hidden;
+}
+
 .top-categories-cards {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 25px;
 }
 
 @media (max-width: 1482px) {
-  .top-categories {
-    grid-template-columns: 1.8fr 4fr;
-  }
+  // .top-categories {
+  //   grid-template-columns: 1.8fr 4fr;
+  // }
 
   .categories-card-img {
     height: 150px;
@@ -1303,9 +1308,9 @@
 }
 
 @media (max-width: 1376px) {
-  .top-categories {
-    grid-template-columns: 1.7fr 4fr;
-  }
+  // .top-categories {
+  //   grid-template-columns: 1.7fr 4fr;
+  // }
 
   .categories-card-img {
     height: 140px;
@@ -1314,22 +1319,22 @@
 
 @media (max-width: 1200px) {
   .top-categories {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
   }
 
   .category-latest-big-img {
     display: none;
   }
 
-  .top-categories-cards {
-    grid-template-columns: repeat(6, 1fr);
-  }
+  // .top-categories-cards {
+  //   grid-template-columns: repeat(6, 1fr);
+  // }
 }
 
 @media (max-width: 1056px) {
-  .top-categories-cards {
-    grid-template-columns: repeat(5, 1fr);
-  }
+  // .top-categories-cards {
+  //   grid-template-columns: repeat(5, 1fr);
+  // }
 
   .categories-card-img {
     height: 160px;
@@ -1337,9 +1342,9 @@
 }
 
 @media (max-width: 938px) {
-  .top-categories-cards {
-    grid-template-columns: repeat(5, 1fr);
-  }
+  // .top-categories-cards {
+  //   grid-template-columns: repeat(5, 1fr);
+  // }
 
   .categories-card-img {
     height: 150px;
@@ -1347,9 +1352,9 @@
 }
 
 @media (max-width: 900px) {
-  .top-categories-cards {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  // .top-categories-cards {
+  //   grid-template-columns: repeat(4, 1fr);
+  // }
 }
 
 @media (max-width: 740px) {
@@ -1363,9 +1368,9 @@
 }
 
 @media (max-width: 694px) {
-  .top-categories-cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  // .top-categories-cards {
+  //   grid-template-columns: repeat(3, 1fr);
+  // }
 
   .categories-card-img {
     height: 160px;
@@ -1385,9 +1390,9 @@
 }
 
 @media (max-width: 474px) {
-  .top-categories-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  // .top-categories-cards {
+  //   grid-template-columns: repeat(2, 1fr);
+  // }
 
   .categories-card-img {
     height: 160px;
