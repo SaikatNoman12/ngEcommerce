@@ -104,3 +104,59 @@
     color: $color-red-crimson !important;
   }
 }
+
+.top-categories {
+  .mySwiper {
+    overflow: initial;
+  }
+
+  .swiper-slide {
+    margin-right: 19.8px !important;
+  }
+
+  .swiper-pagination {
+    display: none !important;
+  }
+
+  .swiper-button-prev {
+    position: absolute;
+    top: -40px;
+    left: 95%;
+  }
+  .swiper-button-next {
+    position: absolute;
+    top: -40px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    border: 1px solid $color-light-gray;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    transition: 200ms;
+  }
+
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    border-color: $color-red-crimson;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    counter: "";
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $color-black-2;
+    font-weight: 600;
+    transition: 200ms;
+  }
+
+  .swiper-button-prev:hover::after,
+  .swiper-button-next:hover::after {
+    color: $color-red-crimson !important;
+  }
+}
