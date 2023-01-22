@@ -4,6 +4,8 @@ import { TimeCounterModule } from '../time-counter/time-counter.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 
+import { SwiperModule } from 'swiper/angular';
+
 
 @NgModule({
   declarations: [
@@ -13,6 +15,7 @@ import { HomeComponent } from './home.component';
     CommonModule,
     HomeRoutingModule,
     TimeCounterModule,
+    SwiperModule
   ]
 })
 export class HomeModule { }

@@ -1,15 +1,17 @@
 @import "../../theme/variable";
+@import "../../theme/swiper.scss";
+
 .header-main {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 260px calc(100% - 280px);
   gap: 20px;
   position: relative;
 }
 
 @media (max-width: 1200px) {
   .header-main {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
   }
 }
 
@@ -175,6 +177,8 @@
 .slider-items {
   width: 100%;
   height: 470px;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .slider-bg {
@@ -1104,6 +1108,9 @@
 }
 
 /* /-----::PRODUCT-SECTION::-----/ */
+.product-section {
+  overflow-x: hidden;
+}
 
 .product-card-section {
   width: 100%;
@@ -1114,7 +1121,7 @@
 .product-cards.proactive {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 20px;
 }
 
@@ -1142,19 +1149,19 @@
 
 @media (max-width: 1496px) {
   .product-cards.proactive {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 @media (max-width: 1200px) {
   .product-cards.proactive {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 @media (max-width: 922px) {
   .product-cards.proactive {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

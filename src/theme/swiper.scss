@@ -1,0 +1,106 @@
+@import "../theme/variable";
+.mySwiper {
+  width: 100%;
+}
+
+.slider-main .swiper-button-next,
+.slider-main .swiper-button-prev {
+  display: none;
+}
+
+.slider-main .swiper-pagination-bullet {
+  height: 12px;
+  width: 12px;
+  background-color: $color-light-gray-2;
+}
+
+.slider-main .swiper-pagination-bullet:hover {
+  background-color: $color-smooth-black;
+}
+
+.slider-main .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: $color-crimson-opacity;
+}
+
+.slider-main .swiper-pagination-bullet.swiper-pagination-bullet-active:hover {
+  background: $color-crimson-opacity;
+}
+
+@media (max-width: 556px) {
+  .slider-main .swiper-horizontal > .swiper-pagination-bullets,
+  .slider-main .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 0px;
+  }
+
+  .slider-main .swiper-pagination-bullet {
+    height: 9px;
+    width: 9px;
+    background-color: $color-black-2;
+  }
+}
+
+.product-card-section {
+  .mySwiper {
+    overflow: inherit;
+  }
+
+  .swiper-slide {
+    margin-right: 19.8px !important;
+  }
+
+  .swiper-pagination {
+    display: none !important;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+
+  .proactive .swiper-button-prev,
+  .proactive .swiper-button-next {
+    display: block;
+  }
+
+  .swiper-button-prev {
+    position: absolute;
+    top: -40px;
+    left: 96%;
+  }
+  .swiper-button-next {
+    position: absolute;
+    top: -40px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    border: 1px solid $color-light-gray;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    transition: 200ms;
+  }
+
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    border-color: $color-red-crimson;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    counter: "";
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $color-black-2;
+    font-weight: 600;
+    transition: 200ms;
+  }
+
+  .swiper-button-prev:hover::after,
+  .swiper-button-next:hover::after {
+    color: $color-red-crimson !important;
+  }
+}

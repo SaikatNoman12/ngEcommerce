@@ -223,6 +223,10 @@ ul {
   background-color: $color-red-crimson;
 }
 
+.product-title-nav {
+  padding-right: 80px;
+}
+
 .product-title-nav ul {
   display: flex;
   align-items: center;
@@ -264,7 +268,7 @@ ul {
 }
 
 .product-title-nav ul li a:hover {
-  color: $color-red-crimson;
+  color: $color-red-crimson !important;
   position: relative;
 }
 
