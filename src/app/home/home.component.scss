@@ -1415,6 +1415,7 @@
 .day-deal-sec {
   width: 100%;
   margin-top: 30px;
+  overflow-x: hidden;
 }
 
 .day-deal-cards-parent {
@@ -1425,7 +1426,7 @@
 
 .day-deal-cards-child {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 100%;
   grid-gap: 25px;
 }
 
