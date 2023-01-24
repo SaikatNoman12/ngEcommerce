@@ -2,10 +2,11 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 
 // import Swiper core and required modules
-import SwiperCore, { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
+import SwiperCore, { A11y, Autoplay, EffectCoverflow, EffectFade, Navigation, Pagination, Scrollbar } from 'swiper';
 
 // install Swiper modules
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Autoplay, Navigation, Pagination, Scrollbar, A11y, EffectFade, EffectCoverflow]);
+
 
 @Component({
   selector: 'app-home',

@@ -38,11 +38,6 @@
           [pagination]="pagination"
           [loop]="true"
           [speed]="1000"
-          [autoplay]="{
-            delay: 1000,
-            disableOnInteraction: false
-          }"
-          [effect]="'fade'"
           [slidesPerView]="1"
           [navigation]="true"
           [loop]="true"
@@ -519,14 +514,9 @@
         [pagination]="true"
         [loop]="false"
         [speed]="500"
-        [autoplay]="{
-          delay: 500,
-          disableOnInteraction: false
-        }"
-        [effect]="'fade'"
+        [autoplay]="false"
         [slidesPerView]="5"
         [navigation]="true"
-        [autoplay]="false"
         [spaceBetween]="20"
         class="mySwiper"
         [class.proactive]="proFeature"
@@ -1377,14 +1367,9 @@
         [pagination]="true"
         [loop]="false"
         [speed]="500"
-        [autoplay]="{
-          delay: 500,
-          disableOnInteraction: false
-        }"
-        [effect]="'fade'"
+        [autoplay]="false"
         [slidesPerView]="5"
         [navigation]="true"
-        [autoplay]="false"
         [spaceBetween]="20"
         class="mySwiper"
         [class.proactive]="proLatest"
@@ -2177,14 +2162,9 @@
         [pagination]="true"
         [loop]="false"
         [speed]="500"
-        [autoplay]="{
-          delay: 500,
-          disableOnInteraction: false
-        }"
-        [effect]="'fade'"
+        [autoplay]="false"
         [slidesPerView]="5"
         [navigation]="true"
-        [autoplay]="false"
         [spaceBetween]="20"
         [class.proactive]="proBestseller"
         class="mySwiper"
@@ -3002,19 +2982,12 @@
       <!-- /----::product-categories-card-section::----/ -->
 
       <swiper
-        [pagination]="true"
         [loop]="false"
         [speed]="500"
-        [autoplay]="{
-          delay: 500,
-          disableOnInteraction: false
-        }"
-        [effect]="'fade'"
         [slidesPerView]="5"
         [navigation]="true"
         [autoplay]="false"
         [spaceBetween]="20"
-        [class.proactive]="proBestseller"
         class="mySwiper"
       >
         <ng-template swiperSlide>
@@ -3151,11 +3124,6 @@
         <swiper
           [loop]="false"
           [speed]="500"
-          [autoplay]="{
-            delay: 500,
-            disableOnInteraction: false
-          }"
-          [effect]="'fade'"
           [slidesPerView]="2"
           [navigation]="true"
           [autoplay]="false"
@@ -3278,65 +3246,234 @@
   </section>
 
   <!-- /----::popular-product::----/ -->
-  <section class="popular-product">
+  <section class="popular-product top-categories-product">
     <div class="top-categories-card-sec">
       <!-- /----::popular-products-section-title::----/ -->
       <div class="product-section-title day-deal-sec-title">
         <div class="product-title-heading">
-          <h3>{{ "top categories" | titlecase }}</h3>
+          <h3>{{ "popular prodcuts" | titlecase }}</h3>
         </div>
       </div>
 
       <!-- /----::popular-products-card-section::----/ -->
-      <div class="popular-products-cards">
-        <ng-container *ngFor="let data of [0, 0, 0, 0, 0, 0]">
-          <div class="day-deal-popular-card popular-products-card">
-            <div class="day-deal-popular-img popular-product-card-img">
-              <a href="#">
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/15_5e56f683-44a7-4242-b99a-cce991374e32_large.jpg?v=1611754098"
-                  alt="day-deal"
-                />
-              </a>
+      <div class="carousel">
+        <swiper
+          [speed]="500"
+          [autoplay]="false"
+          [slidesPerView]="3"
+          [navigation]="true"
+          [spaceBetween]="29"
+          class="mySwiper"
+        >
+          <ng-template swiperSlide>
+            <div class="popular-products-cards">
+              <ng-container *ngFor="let data of [0, 0]">
+                <div class="day-deal-popular-card popular-products-card">
+                  <div class="day-deal-popular-img popular-product-card-img">
+                    <a href="#">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/15_5e56f683-44a7-4242-b99a-cce991374e32_large.jpg?v=1611754098"
+                        alt="day-deal"
+                      />
+                    </a>
 
-              <a href="#">
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/16_319dba49-1821-48b3-a301-7ba31cb21d4a_large.jpg?v=1611754099"
-                  alt="day-deal"
-                />
-              </a>
-            </div>
-            <div class="day-deal-popular-content popular-product-content">
-              <div class="day-deal-title popular-product-card-title">
-                <h3>
-                  <a href="#">{{
-                    "consectetur adipiscing elit".length >= 18
-                      ? "consectetur adipiscing elit".slice(0, 16) + "..."
-                      : ("consectetur adipiscing elit" | titlecase)
-                  }}</a>
-                </h3>
-              </div>
-              <hr />
-              <div class="day-deal-rating">
-                <div class="day-deal-rate popular-product-rate">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half-alt"></i>
-                  <i class="far fa-star"></i>
-                </div>
+                    <a href="#">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/16_319dba49-1821-48b3-a301-7ba31cb21d4a_large.jpg?v=1611754099"
+                        alt="day-deal"
+                      />
+                    </a>
+                  </div>
+                  <div class="day-deal-popular-content popular-product-content">
+                    <div class="day-deal-title popular-product-card-title">
+                      <h3>
+                        <a href="#">{{
+                          "consectetur adipiscing elit".length >= 18
+                            ? "consectetur adipiscing elit".slice(0, 16) + "..."
+                            : ("consectetur adipiscing elit" | titlecase)
+                        }}</a>
+                      </h3>
+                    </div>
+                    <hr />
+                    <div class="day-deal-rating">
+                      <div class="day-deal-rate popular-product-rate">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                      </div>
 
-                <div class="day-deal-info-text popular-product-info-text">
-                  <h6>
-                    <span>
-                      {{ "$" }}{{ "155.00" }} {{ "usd" | uppercase }}
-                    </span>
-                  </h6>
+                      <div class="day-deal-info-text popular-product-info-text">
+                        <h6>
+                          <span>
+                            {{ "$" }}{{ "155.00" }} {{ "usd" | uppercase }}
+                          </span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </ng-container>
             </div>
-          </div>
-        </ng-container>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="popular-products-cards">
+              <ng-container *ngFor="let data of [0, 0]">
+                <div class="day-deal-popular-card popular-products-card">
+                  <div class="day-deal-popular-img popular-product-card-img">
+                    <a href="#">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/15_5e56f683-44a7-4242-b99a-cce991374e32_large.jpg?v=1611754098"
+                        alt="day-deal"
+                      />
+                    </a>
+
+                    <a href="#">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/16_319dba49-1821-48b3-a301-7ba31cb21d4a_large.jpg?v=1611754099"
+                        alt="day-deal"
+                      />
+                    </a>
+                  </div>
+                  <div class="day-deal-popular-content popular-product-content">
+                    <div class="day-deal-title popular-product-card-title">
+                      <h3>
+                        <a href="#">{{
+                          "consectetur adipiscing elit".length >= 18
+                            ? "consectetur adipiscing elit".slice(0, 16) + "..."
+                            : ("consectetur adipiscing elit" | titlecase)
+                        }}</a>
+                      </h3>
+                    </div>
+                    <hr />
+                    <div class="day-deal-rating">
+                      <div class="day-deal-rate popular-product-rate">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+
+                      <div class="day-deal-info-text popular-product-info-text">
+                        <h6>
+                          <span>
+                            {{ "$" }}{{ "155.00" }} {{ "usd" | uppercase }}
+                          </span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="popular-products-cards">
+              <ng-container *ngFor="let data of [0, 0]">
+                <div class="day-deal-popular-card popular-products-card">
+                  <div class="day-deal-popular-img popular-product-card-img">
+                    <a href="#">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/15_5e56f683-44a7-4242-b99a-cce991374e32_large.jpg?v=1611754098"
+                        alt="day-deal"
+                      />
+                    </a>
+
+                    <a href="#">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/16_319dba49-1821-48b3-a301-7ba31cb21d4a_large.jpg?v=1611754099"
+                        alt="day-deal"
+                      />
+                    </a>
+                  </div>
+                  <div class="day-deal-popular-content popular-product-content">
+                    <div class="day-deal-title popular-product-card-title">
+                      <h3>
+                        <a href="#">{{
+                          "consectetur adipiscing elit".length >= 18
+                            ? "consectetur adipiscing elit".slice(0, 16) + "..."
+                            : ("consectetur adipiscing elit" | titlecase)
+                        }}</a>
+                      </h3>
+                    </div>
+                    <hr />
+                    <div class="day-deal-rating">
+                      <div class="day-deal-rate popular-product-rate">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+
+                      <div class="day-deal-info-text popular-product-info-text">
+                        <h6>
+                          <span>
+                            {{ "$" }}{{ "155.00" }} {{ "usd" | uppercase }}
+                          </span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="popular-products-cards">
+              <ng-container *ngFor="let data of [0, 0]">
+                <div class="day-deal-popular-card popular-products-card">
+                  <div class="day-deal-popular-img popular-product-card-img">
+                    <a href="#">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/15_5e56f683-44a7-4242-b99a-cce991374e32_large.jpg?v=1611754098"
+                        alt="day-deal"
+                      />
+                    </a>
+
+                    <a href="#">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0531/1604/3454/products/16_319dba49-1821-48b3-a301-7ba31cb21d4a_large.jpg?v=1611754099"
+                        alt="day-deal"
+                      />
+                    </a>
+                  </div>
+                  <div class="day-deal-popular-content popular-product-content">
+                    <div class="day-deal-title popular-product-card-title">
+                      <h3>
+                        <a href="#">{{
+                          "consectetur adipiscing elit".length >= 18
+                            ? "consectetur adipiscing elit".slice(0, 16) + "..."
+                            : ("consectetur adipiscing elit" | titlecase)
+                        }}</a>
+                      </h3>
+                    </div>
+                    <hr />
+                    <div class="day-deal-rating">
+                      <div class="day-deal-rate popular-product-rate">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+
+                      <div class="day-deal-info-text popular-product-info-text">
+                        <h6>
+                          <span>
+                            {{ "$" }}{{ "155.00" }} {{ "usd" | uppercase }}
+                          </span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </ng-template>
+        </swiper>
       </div>
     </div>
 

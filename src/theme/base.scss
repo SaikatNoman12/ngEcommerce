@@ -720,6 +720,16 @@ ul {
 /* /-----::DAY-DEAL-POPULAR-CARD-END::-----/ */
 
 /* /-----::POPULAR-PRODUCTS-CARD-START::-----/ */
+.popular-products-card {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 29px;
+}
+
+.popular-products-card:last-child {
+  margin-bottom: 0px;
+}
+
 .popular-products-card .popular-product-card-img {
   position: relative;
   width: 100%;
